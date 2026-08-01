@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISS - Points</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <img src="src/iss.svg" alt="ISS Logo" class="logo">
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <div class="container">
+            <div class="points-section">
+                <div class="points-display">
+                    <div class="points-number">60</div>
+                    <div class="points-label">Points</div>
+                </div>
+                <div class="coming-soon">
+                    <h2>🚧 В разработке</h2>
+                    <p>Система очков и достижений находится в активной разработке. Скоро здесь появятся новые возможности!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Нижний бар -->
+    <nav class="bottom-nav">
+        <button class="nav-btn" onclick="navigateTo('home')">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-text">Главная</span>
+        </button>
+        <button class="nav-btn active" onclick="navigateTo('points')">
+            <span class="nav-icon">🏆</span>
+            <span class="nav-text">Points</span>
+        </button>
+        <button class="nav-btn" onclick="navigateTo('settings')">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-text">Настройки</span>
+        </button>
+    </nav>
+
+    <script>
+        // Инициализация Telegram Web App
+        let tg = window.Telegram.WebApp;
+        tg.ready();
+
+        // Функции навигации
+        function navigateTo(page) {
+            if (page === 'home') {
+                window.location.href = '/';
+            } else if (page === 'points') {
+                window.location.href = '/points';
+            } else if (page === 'settings') {
+                window.location.href = '/settings';
+            }
+        }
+
+        // Установка темы в зависимости от Telegram
+        if (tg.colorScheme === 'dark') {
+            document.body.classList.add('dark-theme');
+        }
+    </script>
+</body>
+</html>

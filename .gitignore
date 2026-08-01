@@ -1,0 +1,59 @@
+# ===== Секреты и конфигурация =====
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.cer
+*.key
+
+# APAS Connect — реальная конфигурация с токеном (см. config.example.json)
+**/config.json
+
+# ===== Пользовательские данные (НЕ публиковать!) =====
+data/*.json
+Chats/*
+!Chats/.gitkeep
+Mini App/users_data.json
+archive.json
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+*.spec.bak
+
+# Виртуальные окружения
+.venv/
+venv/
+env/
+ENV/
+
+# ===== IDE и ОС =====
+.idea/
+.vscode/
+.vs/
+*.suo
+*.user
+.DS_Store
+Thumbs.db
+*.swp
+
+# ===== Логи и временные файлы =====
+*.log
+*.tmp
+*.bak
+*.old
+
+# ===== Сборки C++/Qt/CMake =====
+CMakeCache.txt
+CMakeFiles/
+*.o
+*.obj
+*.ilk
+*.pdb
+*.tlog
+*_autogen/

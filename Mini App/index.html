@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISS - Профиль пользователя</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <img src="src/iss.svg" alt="ISS Logo" class="logo">
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Блоки с информацией -->
+            <div class="info-blocks">
+                <!-- Блок с очками -->
+                <div class="info-block">
+                    <div class="block-header">
+                        <span class="block-title">Points</span>
+                        <img src="src/points.svg" alt="Points" class="block-icon">
+                    </div>
+                    <div class="block-value">60</div>
+                </div>
+
+                <!-- Блок с погодой -->
+                <div class="info-block weather-block">
+                    <div class="block-header">
+                        <span class="block-title" id="weatherCity">Загрузка...</span>
+                    </div>
+                    <div class="block-value" id="weatherTemp">--°</div>
+                    <div class="block-condition" id="weatherCondition">Загрузка...</div>
+                </div>
+            </div>
+
+            <!-- Профиль ISS -->
+            <div class="profile-block">
+                <div class="profile-header">
+                    <div class="profile-name" id="issName">Загрузка...</div>
+                    <div class="profile-username" id="issUsername">@загрузка</div>
+                </div>
+                <div class="profile-details">
+                    <span class="label">Дата регистрации:</span> <span id="issRegistrationDate">Загрузка...</span>
+                </div>
+            </div>
+
+            <!-- Профиль Telegram -->
+            <div class="telegram-block">
+                <div class="telegram-info">
+                    <p><span class="label">Имя:</span> <span id="telegramName">Загрузка...</span></p>
+                    <p><span class="label">Username:</span> <span id="telegramUsername">Загрузка...</span></p>
+                    <p><span class="label">ID аккаунта:</span> <span id="telegramId">Загрузка...</span></p>
+                </div>
+            </div>
+
+            <!-- Кнопки действий -->
+            <div class="action-buttons">
+                <button class="action-btn edit-btn" onclick="editProfile()">
+                    ✏️ Редактировать профиль
+                </button>
+                <button class="action-btn share-btn" onclick="shareProfile()">
+                    📤 Поделиться профилем
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Нижний бар -->
+    <nav class="bottom-nav">
+        <button class="nav-btn active" onclick="navigateTo('home')">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-text">Главная</span>
+        </button>
+        <button class="nav-btn" onclick="navigateTo('points')">
+            <span class="nav-icon">🏆</span>
+            <span class="nav-text">Points</span>
+        </button>
+        <button class="nav-btn" onclick="navigateTo('settings')">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-text">Настройки</span>
+        </button>
+    </nav>
+
+    <script>
+        // Инициализация Telegram Web App
+        let tg = window.Telegram.WebApp;
+        tg.ready();
+
+        // Функции навигации
+        function navigateTo(page) {
+            if (page === 'home') {
+                window.location.href = '/';
+            } else if (page === 'points') {
+                window.location.href = '/points';
+            } else if (page === 'settings') {
+                window.location.href = '/settings';
+            }
+        }
+
+        // Получение данных пользователя через Telegram Web App API
+        let user = tg.initDataUnsafe?.user;
+
+        if (user) {
+            // Данные из Telegram
+            const telegramName = user.first_name + (user.last_name ? ' ' + user.last_name : '');
+            const telegramUsername = '@' + (user.username || 'не указан');
+            const telegramId = user.id;
+
+            document.getElementById('telegramName').textContent = telegramName;
+            document.getElementById('telegramUsername').textContent = telegramUsername;
+            document.getElementById('telegramId').textContent = telegramId;
+
+            // Получаем дополнительные данные через API
+            fetch(`/api/user-profile?user_id=${user.id}`)
+                .then(response => {
+                    console.log('API Response status:', response.status);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('API Response data:', data);
+                    if (!data.error) {
+                        // Данные из профиля ISS
+                        document.getElementById('issName').textContent = data.name;
+                        document.getElementById('issUsername').textContent = '@' + (data.username || 'не указан');
+                        document.getElementById('issCity').textContent = data.city;
+                        document.getElementById('issRegistrationDate').textContent = new Date(data.registration_date).toLocaleDateString('ru-RU');
+                    } else {
+                        console.log('API Error:', data.error);
+                        // Оставляем значения по умолчанию
+                        document.getElementById('issName').textContent = 'Пользователь';
+                        document.getElementById('issUsername').textContent = '@неизвестен';
+                        document.getElementById('issRegistrationDate').textContent = 'Неизвестно';
+                    }
+                })
+                .catch(error => {
+                    console.log('API request failed:', error);
+                    // Оставляем значения по умолчанию
+                    document.getElementById('issName').textContent = 'Пользователь';
+                    document.getElementById('issUsername').textContent = '@неизвестен';
+                    document.getElementById('issRegistrationDate').textContent = 'Неизвестно';
+                });
+
+            // Получаем данные о погоде
+            fetch('/api/weather')
+                .then(response => {
+                    console.log('Weather API Response status:', response.status);
+                    return response.json();
+                })
+                .then(weatherData => {
+                    console.log('Weather API Response data:', weatherData);
+                    if (!weatherData.error) {
+                        document.getElementById('weatherCity').textContent = weatherData.city;
+                        document.getElementById('weatherTemp').textContent = weatherData.temperature + '°';
+                        document.getElementById('weatherCondition').textContent = weatherData.condition;
+                    } else {
+                        console.log('Weather API Error:', weatherData.error);
+                        // Значения по умолчанию
+                        document.getElementById('weatherCity').textContent = 'Москва';
+                        document.getElementById('weatherTemp').textContent = '12°';
+                        document.getElementById('weatherCondition').textContent = 'Солнечно';
+                    }
+                })
+                .catch(error => {
+                    console.log('Weather API request failed:', error);
+                    // Значения по умолчанию
+                    document.getElementById('weatherCity').textContent = 'Москва';
+                    document.getElementById('weatherTemp').textContent = '12°';
+                    document.getElementById('weatherCondition').textContent = 'Солнечно';
+                });
+        } else {
+            document.getElementById('telegramName').textContent = 'Пользователь не найден';
+            document.getElementById('telegramUsername').textContent = '—';
+            document.getElementById('issName').textContent = 'Пользователь';
+            document.getElementById('issUsername').textContent = '@неизвестен';
+        }
+
+        // Функция поделиться профилем
+        function shareProfile() {
+            // Получаем username из профиля ISS
+            const username = document.getElementById('issUsername').textContent.replace('@', '');
+            if (username && username !== 'загрузка' && username !== 'неизвестен') {
+                const botUsername = "Intelligence_playground_bot";
+                const profileLink = `https://t.me/${botUsername}?start=profile_${username}`;
+
+                if (tg.initDataUnsafe?.user) {
+                    tg.showPopup({
+                        title: 'Поделиться профилем',
+                        message: 'Ссылка на ваш профиль в ISS:',
+                        buttons: [
+                            {id: 'share', type: 'default', text: 'Поделиться'},
+                            {id: 'cancel', type: 'cancel'}
+                        ]
+                    }, function(buttonId) {
+                        if (buttonId === 'share') {
+                            tg.shareUrl(profileLink);
+                        }
+                    });
+                } else {
+                    tg.showAlert('Не удалось получить данные пользователя');
+                }
+            } else {
+                tg.showAlert('Установите username в профиле, чтобы поделиться им');
+            }
+        }
+
+        // Функция редактировать профиль
+        function editProfile() {
+            tg.showAlert('Функция редактирования профиля доступна в боте через команду /profile');
+        }
+
+        // Установка темы в зависимости от Telegram
+        if (tg.colorScheme === 'dark') {
+            document.body.classList.add('dark-theme');
+        }
+    </script>
+</body>
+</html>
