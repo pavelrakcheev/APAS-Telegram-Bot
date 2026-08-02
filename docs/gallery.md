@@ -1,158 +1,101 @@
 # 🎬 Галерея проекта
 
-Скриншоты и видео работы экосистемы APAS.
+Скриншоты и видео работы экосистемы APAS, рассортированные по темам.
 
 ---
 
-## 📸 Скриншоты
-
-### APAS в VK (alpha-тест)
-
-<p align="center">
-  <img src="media/images/APAS on VK (alpha test).jpg" alt="APAS on VK" width="600">
-</p>
-
-Бот работает в VK с полным набором команд: `/games`, `/about`, `/reports`, `/iss`, `/points`, `/blum`, `/notifications`, `/models`, `/settings`.
-
----
-
-### Потоковая генерация ИИ
-
-<p align="center">
-  <img src="media/images/AI streaming.jpg" alt="AI streaming" width="600">
-</p>
-
-Ответ редактируется по мере генерации в реальном времени.
-
----
-
-### Выбор ИИ-модели
-
-<p align="center">
-  <img src="media/images/Choosing a model.jpg" alt="Choosing a model" width="600">
-</p>
-
-18+ моделей трёх провайдеров: Groq, Gemini, YandexGPT.
-
----
-
-### Профиль ISS Play
-
-<p align="center">
-  <img src="media/images/Iss play profile.jpg" alt="ISS Play profile" width="600">
-</p>
-
-Игровой никнейм и привязка к аккаунту ISS.
-
----
-
-### Панель отчётов
-
-<p align="center">
-  <img src="media/images/Reports.jpg" alt="Reports" width="600">
-</p>
-
-Управление отчётами о проблемах с фильтрами и пагинацией.
-
----
-
-### Поддержка Markdown
-
-<p align="center">
-  <img src="media/images/Markdown.jpg" alt="Markdown" width="600">
-</p>
-
-Форматирование ответов ИИ: жирный, курсив, моноширинный, цитаты, спойлеры.
-
----
-
-### Arc Maps
-
-<p align="center">
-  <img src="media/images/Arc maps place reiview.jpg" alt="Arc Maps" width="600">
-</p>
-
-Поиск мест поблизости по категориям.
-
----
-
-### Голосовой ввод
-
-<p align="center">
-  <img src="media/images/Voice recognition.jpg" alt="Voice recognition" width="600">
-</p>
-
-Распознавание речи для удобного ввода.
-
----
-
-### APAS Connect
-
-<p align="center">
-  <img src="media/images/APAS Connect review.jpg" alt="APAS Connect" width="600">
-</p>
-
-Десктопный клиент-мост для мониторинга системы.
-
----
-
-### ISS Play
-
-<p align="center">
-  <img src="media/images/ISS Play review.jpg" alt="ISS Play" width="600">
-</p>
-
-Игровая подсистема с профилями и никнеймами.
-
----
-
-## 🎥 Видео
-
-### Начальная настройка
+## 🚀 Начальная настройка
 
 <video src="media/videos/Initial setup.mp4" controls width="600"></video>
 
-Запуск и регистрация бота.
+**Запуск и регистрация** — первые шаги с ботом, онбординг.
 
 ---
 
-### Выбор моделей
+## 🤖 ИИ и модели
 
-<video src="media/videos/Choose models.mp4" controls width="600"></video>
+| Скриншот | Описание |
+|----------|----------|
+| <img src="media/images/Choosing a model.jpg" alt="Выбор модели" width="400"> | **Выбор ИИ-модели** — 18+ моделей трёх провайдеров через `/models` |
+| <img src="media/images/AI streaming.jpg" alt="Стриминг" width="400"> | **Потоковая генерация** — ответ редактируется по мере генерации |
+| <img src="media/images/Markdown.jpg" alt="Markdown" width="400"> | **Поддержка Markdown** — жирный, курсив, моноширинный, цитаты, спойлеры |
+| <img src="media/images/Voice recognition.jpg" alt="Голос" width="400"> | **Голосовой ввод** — распознавание речи для удобного ввода |
 
-Переключение между ИИ-моделями.
-
----
-
-### Быстрый стриминг
-
-<video src="media/videos/Fast streaming.mp4" controls width="600"></video>
-
-Потоковая генерация ответа.
-
----
-
-### Alice AI Mode
-
-<video src="media/videos/Alice AI mode.mp4" controls width="600"></video>
-
-ИИ-ассистент с интеграцией Яндекс Музыки.
-
----
-
-### Arc Maps настройки
-
-<video src="media/videos/Arc maps settings.mp4" controls width="600"></video>
-
-Конфигурация категорий и расстояния для поиска мест.
+<table>
+<tr>
+<td align="center" width="50%">
+<video src="media/videos/Choose models.mp4" controls width="400"></video><br>
+<b>Выбор моделей</b><br>
+<sub>Переключение между ИИ-моделями</sub>
+</td>
+<td align="center" width="50%">
+<video src="media/videos/Fast streaming.mp4" controls width="400"></video><br>
+<b>Быстрый стриминг</b><br>
+<sub>Потоковая генерация ответа</sub>
+</td>
+</tr>
+</table>
 
 ---
 
-### ISS Points + Mini App
+## 🎮 ISS Платформа
+
+| Скриншот | Описание |
+|----------|----------|
+| <img src="media/images/Iss play profile.jpg" alt="ISS Play профиль" width="400"> | **Профиль ISS Play** — игровой никнейм и привязка к аккаунту ISS |
+| <img src="media/images/ISS Play review.jpg" alt="ISS Play" width="400"> | **ISS Play** — игровая подсистема с профилями |
+| <img src="media/images/Reports.jpg" alt="Отчёты" width="400"> | **Панель отчётов** — управление отчётами о проблемах |
 
 <video src="media/videos/ISS Points + Mini App review.mp4" controls width="600"></video>
 
-Обзор системы очков и веб-профиля ISS.ME.
+**ISS Points + Mini App** — обзор очков и веб-профиля ISS.ME.
+
+---
+
+## 🌐 Мультиплатформенность
+
+<img src="media/images/APAS on VK (alpha test).jpg" alt="APAS on VK" width="600">
+
+**APAS в VK (alpha-тест)** — бот работает в VK с полным набором команд:
+`/games`, `/about`, `/reports`, `/iss`, `/points`, `/blum`, `/notifications`, `/models`, `/settings`.
+
+---
+
+## 🗺 Геосервисы
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="media/images/Arc maps place reiview.jpg" alt="Arc Maps" width="400"><br>
+<b>Arc Maps</b><br>
+<sub>Поиск мест поблизости по категориям</sub>
+</td>
+<td align="center" width="50%">
+<video src="media/videos/Arc maps settings.mp4" controls width="400"></video><br>
+<b>Настройки карт</b><br>
+<sub>Конфигурация категорий и расстояния</sub>
+</td>
+</tr>
+</table>
+
+---
+
+## 🔌 Клиенты и интеграции
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="media/images/APAS Connect review.jpg" alt="APAS Connect" width="400"><br>
+<b>APAS Connect</b><br>
+<sub>Десктопный клиент-мост для мониторинга системы</sub>
+</td>
+<td align="center" width="50%">
+<video src="media/videos/Alice AI mode.mp4" controls width="400"></video><br>
+<b>Alice AI Mode</b><br>
+<sub>ИИ-ассистент на YandexGPT с интеграцией Яндекс Музыки</sub>
+</td>
+</tr>
+</table>
 
 ---
 

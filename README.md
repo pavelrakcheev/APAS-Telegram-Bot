@@ -1464,116 +1464,114 @@ v0.1 — в [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md). Краткая сво�
 
 ## 🎬 Галерея проекта
 
-Скриншоты и видео работы экосистемы APAS.
+Скриншоты и видео работы экосистемы APAS, рассортированные по темам.
 
-### Скриншоты
+---
+
+### 🚀 Начальная настройка
 
 <table>
 <tr>
-<td align="center" width="50%">
-<img src="docs/media/images/APAS%20on%20VK%20(alpha%20test).jpg" alt="APAS on VK" width="400"><br>
-<b>APAS в VK (alpha-тест)</b><br>
-<sub>Бот работает в VK с полным набором команд</sub>
-</td>
-<td align="center" width="50%">
-<img src="docs/media/images/AI%20streaming.jpg" alt="AI streaming" width="400"><br>
-<b>Потоковая генерация ИИ</b><br>
-<sub>Ответ редактируется по мере генерации</sub>
-</td>
-</tr>
-<tr>
 <td align="center">
-<img src="docs/media/images/Choosing%20a%20model.jpg" alt="Choosing a model" width="400"><br>
-<b>Выбор ИИ-модели</b><br>
-<sub>18+ моделей трёх провайдеров</sub>
-</td>
-<td align="center">
-<img src="docs/media/images/Iss%20play%20profile.jpg" alt="ISS Play profile" width="400"><br>
-<b>Профиль ISS Play</b><br>
-<sub>Игровой никнейм и привязка к ISS</sub>
-</td>
-</tr>
-<tr>
-<td align="center">
-<img src="docs/media/images/Reports.jpg" alt="Reports" width="400"><br>
-<b>Панель отчётов</b><br>
-<sub>Управление отчётами о проблемах</sub>
-</td>
-<td align="center">
-<img src="docs/media/images/Markdown.jpg" alt="Markdown" width="400"><br>
-<b>Поддержка Markdown</b><br>
-<sub>Форматирование ответов ИИ</sub>
-</td>
-</tr>
-<tr>
-<td align="center">
-<img src="docs/media/images/Arc%20maps%20place%20reiview.jpg" alt="Arc Maps" width="400"><br>
-<b>Arc Maps</b><br>
-<sub>Поиск мест поблизости</sub>
-</td>
-<td align="center">
-<img src="docs/media/images/Voice%20recognition.jpg" alt="Voice recognition" width="400"><br>
-<b>Голосовой ввод</b><br>
-<sub>Распознавание речи</sub>
-</td>
-</tr>
-<tr>
-<td align="center">
-<img src="docs/media/images/APAS%20Connect%20review.jpg" alt="APAS Connect" width="400"><br>
-<b>APAS Connect</b><br>
-<sub>Десктопный клиент-мост</sub>
-</td>
-<td align="center">
-<img src="docs/media/images/ISS%20Play%20review.jpg" alt="ISS Play" width="400"><br>
-<b>ISS Play</b><br>
-<sub>Игровая подсистема</sub>
+<video src="docs/media/videos/Initial%20setup.mp4" controls width="400"></video><br>
+<b>Запуск и регистрация</b><br>
+<sub>Первые шаги с ботом, онбординг</sub>
 </td>
 </tr>
 </table>
 
-### Видео
+---
+
+### 🤖 ИИ и модели
+
+| Скриншот | Описание |
+|----------|----------|
+| <img src="docs/media/images/Choosing%20a%20model.jpg" alt="Выбор модели" width="350"> | **Выбор ИИ-модели** — 18+ моделей трёх провайдеров через `/models` |
+| <img src="docs/media/images/AI%20streaming.jpg" alt="Стриминг" width="350"> | **Потоковая генерация** — ответ редактируется по мере генерации |
+| <img src="docs/media/images/Markdown.jpg" alt="Markdown" width="350"> | **Поддержка Markdown** — жирный, курсив, моноширинный, цитаты, спойлеры |
+| <img src="docs/media/images/Voice%20recognition.jpg" alt="Голос" width="350"> | **Голосовой ввод** — распознавание речи для удобного ввода |
 
 <table>
 <tr>
-<td align="center" width="50%">
-<video src="docs/media/videos/Initial%20setup.mp4" controls width="400"></video><br>
-<b>Начальная настройка</b><br>
-<sub>Запуск и регистрация бота</sub>
-</td>
 <td align="center" width="50%">
 <video src="docs/media/videos/Choose%20models.mp4" controls width="400"></video><br>
 <b>Выбор моделей</b><br>
 <sub>Переключение между ИИ-моделями</sub>
 </td>
-</tr>
-<tr>
-<td align="center">
+<td align="center" width="50%">
 <video src="docs/media/videos/Fast%20streaming.mp4" controls width="400"></video><br>
 <b>Быстрый стриминг</b><br>
 <sub>Потоковая генерация ответа</sub>
 </td>
-<td align="center">
-<video src="docs/media/videos/Alice%20AI%20mode.mp4" controls width="400"></video><br>
-<b>Alice AI Mode</b><br>
-<sub>ИИ-ассистент с Яндекс Музыкой</sub>
-</td>
 </tr>
+</table>
+
+---
+
+### 🎮 ISS Платформа
+
+| Скриншот | Описание |
+|----------|----------|
+| <img src="docs/media/images/Iss%20play%20profile.jpg" alt="ISS Play профиль" width="350"> | **Профиль ISS Play** — игровой никнейм и привязка к аккаунту ISS |
+| <img src="docs/media/images/ISS%20Play%20review.jpg" alt="ISS Play" width="350"> | **ISS Play** — игровая подсистема с профилями |
+| <img src="docs/media/images/Reports.jpg" alt="Отчёты" width="350"> | **Панель отчётов** — управление отчётами о проблемах |
+
+<table>
 <tr>
-<td align="center">
-<video src="docs/media/videos/Arc%20maps%20settings.mp4" controls width="400"></video><br>
-<b>Arc Maps настройки</b><br>
-<sub>Конфигурация карт</sub>
-</td>
 <td align="center">
 <video src="docs/media/videos/ISS%20Points%20%2B%20Mini%20App%20review.mp4" controls width="400"></video><br>
 <b>ISS Points + Mini App</b><br>
-<sub>Обзор очков и веб-профиля</sub>
+<sub>Обзор очков и веб-профиля ISS.ME</sub>
 </td>
 </tr>
 </table>
 
+---
+
+### 🌐 Мультиплатформенность
+
+<table>
+<tr>
+<td align="center">
+<img src="docs/media/images/APAS%20on%20VK%20(alpha%20test).jpg" alt="APAS on VK" width="500"><br>
+<b>APAS в VK (alpha-тест)</b><br>
+<sub>Бот работает в VK с полным набором команд: /games, /about, /reports, /iss, /points, /blum, /notifications, /models, /settings</sub>
+</td>
+</tr>
+</table>
+
+---
+
+### 🗺 Геосервисы
+
+| Скриншот | Видео |
+|----------|-------|
+| <img src="docs/media/images/Arc%20maps%20place%20reiview.jpg" alt="Arc Maps" width="350"> | <video src="docs/media/videos/Arc%20maps%20settings.mp4" controls width="350"></video> |
+| **Arc Maps** — поиск мест поблизости по категориям | **Настройки карт** — конфигурация категорий и расстояния |
+
+---
+
+### 🔌 Клиенты и интеграции
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="docs/media/images/APAS%20Connect%20review.jpg" alt="APAS Connect" width="400"><br>
+<b>APAS Connect</b><br>
+<sub>Десктопный клиент-мост для мониторинга системы</sub>
+</td>
+<td align="center" width="50%">
+<video src="docs/media/videos/Alice%20AI%20mode.mp4" controls width="400"></video><br>
+<b>Alice AI Mode</b><br>
+<sub>ИИ-ассистент на YandexGPT с интеграцией Яндекс Музыки</sub>
+</td>
+</tr>
+</table>
+
+---
+
 > [!TIP]
-> Полная версия галереи доступна на [GitHub Pages](https://pavelrakcheev.github.io/APAS-Telegram-Bot/gallery/).
+> Полная версия галереи с подробными описаниями доступна на [GitHub Pages](https://pavelrakcheev.github.io/APAS-Telegram-Bot/gallery/).
 
 <div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
