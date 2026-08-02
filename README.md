@@ -385,11 +385,9 @@ Groq SDK (генерация никнеймов), JSON-хранилище, inlin
 regex-валидация.
 
 <p align="center">
-  <img src="docs/media/images/Iss%20play%20profile.jpg" alt="Профиль ISS Play" width="350">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/media/images/ISS%20Play%20review.jpg" alt="ISS Play" width="350">
+  <img src="docs/media/images/ISS%20Play%20review.jpg" alt="ISS Play" width="400">
 </p>
-<p align="center"><sub>Профиль ISS Play и игровая подсистема</sub></p>
+<p align="center"><sub>Профиль и игровая подсистема ISS Play</sub></p>
 
 <div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
@@ -703,11 +701,9 @@ imessage API, WhatsApp Business API, SQLite/PostgreSQL.
 - **Журнал диалогов** — каждая беседа сохраняется в `Chats/<user_id>/chat.txt`.
 
 <p align="center">
-  <img src="docs/media/images/Choosing%20a%20model.jpg" alt="Выбор модели" width="350">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/media/images/AI%20streaming.jpg" alt="Стриминг" width="350">
+  <img src="docs/media/images/AI%20streaming.jpg" alt="Стриминг" width="400">
 </p>
-<p align="center"><sub>Выбор ИИ-модели и потоковая генерация ответа</sub></p>
+<p align="center"><sub>Потоковая генерация ответа в реальном времени</sub></p>
 
 <p align="center">
   <img src="docs/media/images/Markdown.jpg" alt="Markdown" width="350">

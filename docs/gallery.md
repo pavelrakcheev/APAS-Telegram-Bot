@@ -16,7 +16,6 @@
 
 | Скриншот | Описание |
 |----------|----------|
-| <img src="media/images/Choosing a model.jpg" alt="Выбор модели" width="400"> | **Выбор ИИ-модели** — 18+ моделей трёх провайдеров через `/models` |
 | <img src="media/images/AI streaming.jpg" alt="Стриминг" width="400"> | **Потоковая генерация** — ответ редактируется по мере генерации |
 | <img src="media/images/Markdown.jpg" alt="Markdown" width="400"> | **Поддержка Markdown** — жирный, курсив, моноширинный, цитаты, спойлеры |
 | <img src="media/images/Voice recognition.jpg" alt="Голос" width="400"> | **Голосовой ввод** — распознавание речи для удобного ввода |
@@ -30,8 +29,7 @@
 
 | Скриншот | Описание |
 |----------|----------|
-| <img src="media/images/Iss play profile.jpg" alt="ISS Play профиль" width="400"> | **Профиль ISS Play** — игровой никнейм и привязка к аккаунту ISS |
-| <img src="media/images/ISS Play review.jpg" alt="ISS Play" width="400"> | **ISS Play** — игровая подсистема с профилями |
+| <img src="media/images/ISS Play review.jpg" alt="ISS Play" width="400"> | **ISS Play** — игровая подсистема с профилями и никнеймами |
 | <img src="media/images/Reports.jpg" alt="Отчёты" width="400"> | **Панель отчётов** — управление отчётами о проблемах |
 
 - 🎬 [Видео: ISS Points + Mini App](media/videos/ISS%20Points%20%2B%20Mini%20App%20review.mp4)
