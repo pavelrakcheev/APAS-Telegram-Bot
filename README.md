@@ -1522,8 +1522,14 @@ JSON-файлы в `data/` и журналы диалогов в `Chats/` — б
 
 <img src="assets/covers/apas-logo-cover.png" alt="APAS" width="120">
 
-**Сделано с 🛰️ и большим количеством кофе · APAS Ecosystem `v0.1.0-canary`**
+**APAS Ecosystem · v0.1.0-canary**
 
-<img src="https://img.shields.io/badge/если_проект_понравился-поставьте_⭐-2ea44f?style=flat-square" alt="Star this repo">
+<img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License">
+<img src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white&style=flat-square" alt="Python 3.10+">
+<img src="https://img.shields.io/github/actions/workflow/status/pavelrakcheev/APAS-Telegram-Bot/ci.yml?label=CI&style=flat-square" alt="CI">
+
+<br>
+
+[⚡ Быстрый старт](#-быстрый-старт) · [📖 Документация](docs/) · [🐞 Известные проблемы](docs/KNOWN-ISSUES.md) · [❓ FAQ](#-faq)
 
 </div>
