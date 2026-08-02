@@ -89,6 +89,8 @@ cp .env.example .env        # впишите ключи
 docker compose up -d --build
 ```
 
+> 🎬 [Видео: Начальная настройка и запуск](docs/media/videos/Initial%20setup.mp4)
+
 <div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
@@ -432,10 +434,7 @@ regex-валидация.
 Python, python-telegram-bot 22.5, JSON-хранилища (`users_data.json`,
 `points_transactions.json`), inline-клавиатуры, пагинация.
 
-<p align="center">
-  <video src="docs/media/videos/ISS%20Points%20%2B%20Mini%20App%20review.mp4" controls width="500"></video>
-</p>
-<p align="center"><sub>Обзор ISS Points и Mini App ISS.ME</sub></p>
+> 🎬 [Видеообзор ISS Points + Mini App](docs/media/videos/ISS%20Points%20%2B%20Mini%20App%20review.mp4)
 
 <div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
@@ -607,10 +606,7 @@ reply/inline-клавиатуры, Markdown-форматирование, фот
   дублируют обработчики из `alice.py`; старый `Modes/Alice/yamusic.py`
   (requests-версия) не используется.
 
-<p align="center">
-  <video src="docs/media/videos/Alice%20AI%20mode.mp4" controls width="500"></video>
-</p>
-<p align="center"><sub>Демонстрация Alice AI Mode с Яндекс Музыкой</sub></p>
+> 🎬 [Демонстрация Alice AI Mode с Яндекс Музыкой](docs/media/videos/Alice%20AI%20mode.mp4)
 
 <div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
@@ -720,12 +716,7 @@ imessage API, WhatsApp Business API, SQLite/PostgreSQL.
 </p>
 <p align="center"><sub>Поддержка Markdown и голосовой ввод</sub></p>
 
-<p align="center">
-  <video src="docs/media/videos/Choose%20models.mp4" controls width="400"></video>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <video src="docs/media/videos/Fast%20streaming.mp4" controls width="400"></video>
-</p>
-<p align="center"><sub>Выбор моделей и быстрый стриминг</sub></p>
+> 🎬 [Видео: Выбор моделей](docs/media/videos/Choose%20models.mp4) · [Видео: Быстрый стриминг](docs/media/videos/Fast%20streaming.mp4)
 
 ### ISS: пользователи, профили, соцсеть
 
@@ -759,11 +750,11 @@ imessage API, WhatsApp Business API, SQLite/PostgreSQL.
 > В текущей версии погода — **заглушка** (моковые данные).
 
 <p align="center">
-  <img src="docs/media/images/Arc%20maps%20place%20reiview.jpg" alt="Arc Maps" width="350">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <video src="docs/media/videos/Arc%20maps%20settings.mp4" controls width="350"></video>
+  <img src="docs/media/images/Arc%20maps%20place%20reiview.jpg" alt="Arc Maps" width="400">
 </p>
-<p align="center"><sub>Arc Maps — поиск мест и настройка категорий</sub></p>
+<p align="center"><sub>Arc Maps — поиск мест поблизости по категориям</sub></p>
+
+> 🎬 [Видео: Настройки Arc Maps](docs/media/videos/Arc%20maps%20settings.mp4)
 
 ### Развлечения и сервисы
 

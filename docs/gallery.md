@@ -6,9 +6,9 @@
 
 ## 🚀 Начальная настройка
 
-<video src="media/videos/Initial setup.mp4" controls width="600"></video>
+[Видео: Запуск и регистрация бота](media/videos/Initial%20setup.mp4)
 
-**Запуск и регистрация** — первые шаги с ботом, онбординг.
+Первые шаги с ботом, онбординг.
 
 ---
 
@@ -21,20 +21,8 @@
 | <img src="media/images/Markdown.jpg" alt="Markdown" width="400"> | **Поддержка Markdown** — жирный, курсив, моноширинный, цитаты, спойлеры |
 | <img src="media/images/Voice recognition.jpg" alt="Голос" width="400"> | **Голосовой ввод** — распознавание речи для удобного ввода |
 
-<table>
-<tr>
-<td align="center" width="50%">
-<video src="media/videos/Choose models.mp4" controls width="400"></video><br>
-<b>Выбор моделей</b><br>
-<sub>Переключение между ИИ-моделями</sub>
-</td>
-<td align="center" width="50%">
-<video src="media/videos/Fast streaming.mp4" controls width="400"></video><br>
-<b>Быстрый стриминг</b><br>
-<sub>Потоковая генерация ответа</sub>
-</td>
-</tr>
-</table>
+- 🎬 [Видео: Выбор моделей](media/videos/Choose%20models.mp4)
+- 🎬 [Видео: Быстрый стриминг](media/videos/Fast%20streaming.mp4)
 
 ---
 
@@ -46,9 +34,7 @@
 | <img src="media/images/ISS Play review.jpg" alt="ISS Play" width="400"> | **ISS Play** — игровая подсистема с профилями |
 | <img src="media/images/Reports.jpg" alt="Отчёты" width="400"> | **Панель отчётов** — управление отчётами о проблемах |
 
-<video src="media/videos/ISS Points + Mini App review.mp4" controls width="600"></video>
-
-**ISS Points + Mini App** — обзор очков и веб-профиля ISS.ME.
+- 🎬 [Видео: ISS Points + Mini App](media/videos/ISS%20Points%20%2B%20Mini%20App%20review.mp4)
 
 ---
 
@@ -63,39 +49,20 @@
 
 ## 🗺 Геосервисы
 
-<table>
-<tr>
-<td align="center" width="50%">
-<img src="media/images/Arc maps place reiview.jpg" alt="Arc Maps" width="400"><br>
-<b>Arc Maps</b><br>
-<sub>Поиск мест поблизости по категориям</sub>
-</td>
-<td align="center" width="50%">
-<video src="media/videos/Arc maps settings.mp4" controls width="400"></video><br>
-<b>Настройки карт</b><br>
-<sub>Конфигурация категорий и расстояния</sub>
-</td>
-</tr>
-</table>
+<img src="media/images/Arc maps place reiview.jpg" alt="Arc Maps" width="500">
+
+**Arc Maps** — поиск мест поблизости по категориям.
+
+- 🎬 [Видео: Настройки карт](media/videos/Arc%20maps%20settings.mp4)
 
 ---
 
 ## 🔌 Клиенты и интеграции
 
-<table>
-<tr>
-<td align="center" width="50%">
-<img src="media/images/APAS Connect review.jpg" alt="APAS Connect" width="400"><br>
-<b>APAS Connect</b><br>
-<sub>Десктопный клиент-мост для мониторинга системы</sub>
-</td>
-<td align="center" width="50%">
-<video src="media/videos/Alice AI mode.mp4" controls width="400"></video><br>
-<b>Alice AI Mode</b><br>
-<sub>ИИ-ассистент на YandexGPT с интеграцией Яндекс Музыки</sub>
-</td>
-</tr>
-</table>
+| Компонент | Описание |
+|-----------|----------|
+| <img src="media/images/APAS Connect review.jpg" alt="APAS Connect" width="400"> | **APAS Connect** — десктопный клиент-мост для мониторинга системы |
+| 🎬 [Видео: Alice AI Mode](media/videos/Alice%20AI%20mode.mp4) | **Alice AI Mode** — ИИ-ассистент на YandexGPT с Яндекс Музикой |
 
 ---
 
