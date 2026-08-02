@@ -1,7 +1,7 @@
 python-telegram-bot==22.5
 groq==0.33.0
 google-generativeai==0.8.5
-requests==2.33.0
+requests==2.34.2
 python-dotenv==1.2.2
 yandex-music==2.1.0
 Pillow==12.3.0
