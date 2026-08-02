@@ -1,58 +1,35 @@
-<div align="center">
+<p align="center">
+  <img src="assets/covers/apas-logo-cover.png" alt="APAS" width="600">
+</p>
 
-<img src="assets/covers/apas-logo-cover.png" alt="APAS" width="600">
+<p align="center">
+  <img src="https://img.shields.io/badge/version-0.1.0--canary-orange" alt="Version 0.1.0-canary">
+  <img src="https://img.shields.io/badge/status-extremely%20unstable-red" alt="Status: extremely unstable">
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License: MIT">
+  <img src="https://img.shields.io/badge/python-3.10%2B-informational" alt="Python 3.10+">
+</p>
 
-<h1>🛰️ APAS — Telegram Bot Ecosystem</h1>
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/Flask-3.1.2-000000?logo=flask&logoColor=white" alt="Flask 3.1.2">
+  <img src="https://img.shields.io/badge/Qt-6.9.3-41CD52?logo=qt&logoColor=white" alt="Qt 6.9.3">
+  <img src="https://img.shields.io/badge/Telegram-Bot%20API-26A5E4?logo=telegram&logoColor=white" alt="Telegram Bot API">
+  <img src="https://img.shields.io/badge/Groq-LLM-FF4A00?logo=groq&logoColor=white" alt="Groq LLM">
+  <img src="https://img.shields.io/badge/Google-Gemini-8E75B2?logo=google&logoColor=white" alt="Google Gemini">
+  <img src="https://img.shields.io/badge/Yandex-YandexGPT-FF0000?logo=yandex&logoColor=white" alt="YandexGPT">
+  <img src="https://img.shields.io/badge/C%2B%2B17-00599C?logo=cplusplus&logoColor=white" alt="C++17">
+</p>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=26A5E4&center=true&vCenter=true&width=780&lines=%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9+%D0%98%D0%8B+%D0%B2+Telegram;ISS+%C2%B7+ISS+Play+%C2%B7+ISS+Points+%C2%B7+ISS.ME+%C2%B7+Blum+%C2%B7+Alice;Groq+%2B+Gemini+%2B+YandexGPT+%2B+Vertex+AI;%E2%9A%A0%EF%B8%8F+0.1.0-canary+%E2%80%94+%D0%BF%D0%B5%D1%81%D0%BE%D1%87%D0%BD%D0%B8%D1%86%D0%B0%2C+%D0%BD%D0%B5+production" alt="Typing SVG" />
-
-<br>
-
-<sup><b>СТАТУС</b></sup><br>
-<img src="https://img.shields.io/badge/version-0.1.0--canary-orange?style=for-the-badge" alt="Version 0.1.0-canary">
-<img src="https://img.shields.io/badge/status-extremely%20unstable-red?style=for-the-badge" alt="Status: extremely unstable">
-<img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="License: MIT">
-
-<br><br>
-
-<sup><b>СТЕК</b></sup><br>
-<img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.10+">
-<img src="https://img.shields.io/badge/Flask-3.1.2-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask 3.1.2">
-<img src="https://img.shields.io/badge/Qt-6.9.3-41CD52?style=for-the-badge&logo=qt&logoColor=white" alt="Qt 6.9.3">
-<img src="https://img.shields.io/badge/Telegram-Bot%20API%2022.5-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Bot API">
-<img src="https://img.shields.io/badge/C%2B%2B17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++17">
-
-<br><br>
-
-<sup><b>ИИ-ПРОВАЙДЕРЫ</b></sup><br>
-<img src="https://img.shields.io/badge/Groq-LLM-FF4A00?style=for-the-badge&logo=groq&logoColor=white" alt="Groq LLM">
-<img src="https://img.shields.io/badge/Google-Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white" alt="Google Gemini">
-<img src="https://img.shields.io/badge/Yandex-YandexGPT-FF0000?style=for-the-badge&logo=yandex&logoColor=white" alt="YandexGPT">
-<img src="https://img.shields.io/badge/Vertex%20AI-Imagen-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Vertex AI Imagen">
-
-<br><br>
-
-<img src="https://img.shields.io/github/stars/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Stars">
-<img src="https://img.shields.io/github/forks/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Forks">
-<img src="https://img.shields.io/github/watchers/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Watchers">
-<br>
-<img src="https://img.shields.io/github/repo-size/pavelrakcheev/APAS-Telegram-Bot?color=informational" alt="Repo size">
-<img src="https://img.shields.io/github/last-commit/pavelrakcheev/APAS-Telegram-Bot?color=informational" alt="Last commit">
-<img src="https://img.shields.io/github/issues/pavelrakcheev/APAS-Telegram-Bot?color=informational" alt="Open issues">
-<img src="https://img.shields.io/github/actions/workflow/status/pavelrakcheev/APAS-Telegram-Bot/ci.yml?label=CI" alt="CI status">
-<img src="https://img.shields.io/github/actions/workflow/status/pavelrakcheev/APAS-Telegram-Bot/pages.yml?label=Docs" alt="Docs build">
-
-<br><br>
-
-<a href="#-быстрый-старт"><img src="https://img.shields.io/badge/⚡-Быстрый_старт-2ea44f?style=flat-square" alt="Быстрый старт"></a>
-<a href="#-попробовать-бота"><img src="https://img.shields.io/badge/🤖-Попробовать_бота-2ea44f?style=flat-square" alt="Попробовать бота"></a>
-<a href="#-экосистема-apas"><img src="https://img.shields.io/badge/🌐-Экосистема-2ea44f?style=flat-square" alt="Экосистема"></a>
-<a href="#-архитектура"><img src="https://img.shields.io/badge/🏗-Архитектура-2ea44f?style=flat-square" alt="Архитектура"></a>
-<a href="#-известные-проблемы"><img src="https://img.shields.io/badge/🐞-Известные_проблемы-2ea44f?style=flat-square" alt="Известные проблемы"></a>
-<a href="#-аудиты-безопасности"><img src="https://img.shields.io/badge/🔒-Аудиты-2ea44f?style=flat-square" alt="Аудиты безопасности"></a>
-<a href="#-faq"><img src="https://img.shields.io/badge/❓-FAQ-2ea44f?style=flat-square" alt="FAQ"></a>
-
-</div>
+<p align="center">
+  <img src="https://img.shields.io/github/stars/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Stars">
+  <img src="https://img.shields.io/github/forks/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Forks">
+  <img src="https://img.shields.io/github/watchers/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Watchers">
+  <img src="https://img.shields.io/github/repo-size/pavelrakcheev/APAS-Telegram-Bot" alt="Repo size">
+  <img src="https://img.shields.io/github/last-commit/pavelrakcheev/APAS-Telegram-Bot" alt="Last commit">
+  <img src="https://img.shields.io/github/issues/pavelrakcheev/APAS-Telegram-Bot" alt="Open issues">
+  <img src="https://img.shields.io/github/actions/workflow/status/pavelrakcheev/APAS-Telegram-Bot/ci.yml?label=CI" alt="CI status">
+  <img src="https://img.shields.io/github/actions/workflow/status/pavelrakcheev/APAS-Telegram-Bot/pages.yml?label=Docs" alt="Docs build">
+</p>
 
 <br>
 
@@ -1541,26 +1518,12 @@ JSON-файлы в `data/` и журналы диалогов в `Chats/` — б
 
 ---
 
-## ⭐ Star History
-
-<a href="https://star-history.com/#pavelrakcheev/APAS-Telegram-Bot&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=pavelrakcheev/APAS-Telegram-Bot&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=pavelrakcheev/APAS-Telegram-Bot&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=pavelrakcheev/APAS-Telegram-Bot&type=Date" />
-  </picture>
-</a>
-
----
-
 <div align="center">
 
 <img src="assets/covers/apas-logo-cover.png" alt="APAS" width="120">
 
 **Сделано с 🛰️ и большим количеством кофе · APAS Ecosystem `v0.1.0-canary`**
 
-<img src="https://img.shields.io/badge/если_проект_понравился-поставьте_⭐-2ea44f?style=for-the-badge" alt="Star this repo">
-
-[⚡ Быстрый старт](#-быстрый-старт) · [🤖 Попробовать бота](#-попробовать-бота) · [🐞 Известные проблемы](#-известные-проблемы) · [❓ FAQ](#-faq)
+<img src="https://img.shields.io/badge/если_проект_понравился-поставьте_⭐-2ea44f?style=flat-square" alt="Star this repo">
 
 </div>
