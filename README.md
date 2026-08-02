@@ -1199,10 +1199,10 @@ CPU/RAM/диск, кнопками «Get System Info», «Check API & Models»,
 
 | Провайдер | Модуль | Модели в v0.1 | Стриминг |
 |---|---|---|---|
-| **Groq** | `Models/groq.py` | GPT OSS 20B/120B, Kimi K2, Qwen3 32B, Llama 3.1/3.3/4 Maverick/Scout | ✅ |
-| **Google Gemini** | `Models/gemini.py` | Gemini 2.0 Flash Exp/Lite, 2.5 Flash/Lite/Pro | ❌ |
-| **YandexGPT** | `Models/yandex.py` | YandexGPT 4 Lite, 5 Lite, 5 Pro, 5.1 Pro | ❌ |
-| **Google Imagen** | `Commands/image.py` | Imagen 3.0 (Vertex AI) | — |
+| <img src="assets/logos/groq.svg" width="16" alt="Groq"> **Groq** | `Models/groq.py` | GPT OSS 20B/120B, Kimi K2, Qwen3 32B, Llama 3.1/3.3/4 Maverick/Scout | ✅ |
+| <img src="assets/logos/google.svg" width="16" alt="Google"> **Google Gemini** | `Models/gemini.py` | Gemini 2.0 Flash Exp/Lite, 2.5 Flash/Lite/Pro | ❌ |
+| <img src="assets/logos/yandex.svg" width="16" alt="Yandex"> **YandexGPT** | `Models/yandex.py` | YandexGPT 4 Lite, 5 Lite, 5 Pro, 5.1 Pro | ❌ |
+| <img src="assets/logos/google.svg" width="16" alt="Google"> **Google Imagen** | `Commands/image.py` | Imagen 3.0 (Vertex AI) | — |
 
 > ⚠️ По состоянию на 2026 год часть моделей отключена провайдерами:
 > Groq — Kimi K2, Qwen3 32B, Llama 4 Maverick/Scout, Llama 3.1/3.3
@@ -1279,8 +1279,8 @@ v0.1 — в [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md). Краткая сво�
 
 | # | Аудит | Инструмент | Отчёт |
 |---|---|---|---|
-| 1 | **Аудит №1** | **DeepSeek V4 Flash (Max)** в OpenCode Desktop | [docs/AUDIT-01-deepseek.md](docs/AUDIT-01-deepseek.md) |
-| 2 | **Аудит №2** | **ChatGPT Codex (GPT-5.6 Sol High) + Codex Security** | [docs/AUDIT-02-codex.md](docs/AUDIT-02-codex.md) |
+| 1 | **Аудит №1** | <img src="assets/logos/deepseek.svg" width="16" alt="DeepSeek"> **DeepSeek V4 Flash (Max)** в <img src="assets/logos/opencode.svg" width="16" alt="OpenCode"> OpenCode Desktop | [docs/AUDIT-01-deepseek.md](docs/AUDIT-01-deepseek.md) |
+| 2 | **Аудит №2** | <img src="assets/logos/chatgpt.svg" width="16" alt="ChatGPT"> **ChatGPT Codex (GPT-5.6 Sol High)** + <img src="assets/logos/codex.svg" width="16" alt="Codex"> **Codex Security** | [docs/AUDIT-02-codex.md](docs/AUDIT-02-codex.md) |
 
 ### Security-дашборд v0.1
 
@@ -1300,11 +1300,11 @@ v0.1 — в [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md). Краткая сво�
 
 ### Резюме аудитов
 
-- **Аудит №1 (DeepSeek):** общий аудит структуры, функций и мусора.
+- **Аудит №1 (<img src="assets/logos/deepseek.svg" width="12" alt="DeepSeek"> DeepSeek):** общий аудит структуры, функций и мусора.
   Обнаружены: секреты в `.env` и `config.json`, IDOR в myreports,
   уязвимость `/remote`, мёртвый `generator.py` с path traversal и `eval()`,
   дублирование кода, 99,5% папки — пересобираемый мусор (660 МБ).
-- **Аудит №2 (Codex + Codex Security):** углублённый аудит безопасности.
+- **Аудит №2 (<img src="assets/logos/chatgpt.svg" width="12" alt="ChatGPT"> Codex + <img src="assets/logos/codex.svg" width="12" alt="Codex"> Codex Security):** углублённый аудит безопасности.
   Подтвердил аудит №1 и добавил: сломанную маршрутизацию callback отчётов
   (IDOR скрыт ошибкой роутера), PFX с приватным ключом, live-уязвимость
   Mini App на Render (`/api/debug` + CORS), mass assignment в настройках,
