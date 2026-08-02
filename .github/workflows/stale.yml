@@ -1,0 +1,27 @@
+name: Stale Issues
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+permissions:
+  issues: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          stale-issue-message: >
+            Этот Issue неактивен более 30 дней. Если проблема актуальна,
+            напишите комментарий, и он будет переоткрыт.
+          close-issue-message: >
+            Issue закрыт из-за неактивности (60 дней). Переоткройте,
+            если проблема всё ещё актуальна.
+          days-before-stale: 30
+          days-before-close: 60
+          stale-issue-label: "stale"
+          stale-pr-label: "stale"
+          exempt-issue-labels: "pinned,security,critical"
+          exempt-pr-labels: "pinned,security,critical"

@@ -1,0 +1,52 @@
+site_name: APAS — Документация
+site_url: https://pavelrakcheev.github.io/APAS-Telegram-Bot/
+repo_url: https://github.com/pavelrakcheev/APAS-Telegram-Bot
+repo_name: APAS-Telegram-Bot
+
+theme:
+  name: material
+  language: ru
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Тёмная тема
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Светлая тема
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+
+nav:
+  - Главная: index.md
+  - Установка: SETUP.md
+  - Архитектура: ARCHITECTURE.md
+  - Известные проблемы: KNOWN-ISSUES.md
+  - Аудит №1 (DeepSeek): AUDIT-01-deepseek.md
+  - Аудит №2 (Codex Security): AUDIT-02-codex.md

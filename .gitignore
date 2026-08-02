@@ -24,6 +24,7 @@ __pycache__/
 .eggs/
 build/
 dist/
+site/
 *.spec.bak
 
 # Виртуальные окружения

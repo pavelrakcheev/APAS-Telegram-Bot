@@ -1,0 +1,51 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build-exe:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          cd "APAS Connect"
+          pip install flask psutil requests pystray Pillow pyinstaller
+      - name: Create dummy config
+        run: |
+          cd "APAS Connect"
+          echo '{"bot_token":"placeholder","server_port":5000,"server_host":"127.0.0.1"}' > config.json
+      - name: Build exe
+        run: |
+          cd "APAS Connect"
+          python build_exe.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: APAS_Connect
+          path: "APAS Connect/dist/APAS_Connect.exe"
+
+  release:
+    needs: build-exe
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: APAS_Connect
+          path: dist
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          prerelease: ${{ contains(github.ref, 'canary') || contains(github.ref, 'alpha') || contains(github.ref, 'beta') }}
+          files: dist/APAS_Connect.exe

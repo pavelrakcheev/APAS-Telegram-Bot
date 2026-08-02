@@ -1,0 +1,37 @@
+bot:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "Commands/**"
+      - "Models/**"
+      - "Modes/**"
+      - "Modules/**"
+      - "main.py"
+      - "shared.py"
+
+mini-app:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "Mini App/**"
+
+connect:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "APAS Connect/**"
+      - "APAS Connect Qt/**"
+
+docs:
+  - changed-files:
+    - any-glob-to-any-file:
+      - "docs/**"
+      - "README.md"
+      - "CHANGELOG.md"
+      - "mkdocs.yml"
+
+ci:
+  - changed-files:
+    - any-glob-to-any-file:
+      - ".github/**"
+      - "Makefile"
+      - "Dockerfile"
+      - "docker-compose.yml"
+      - ".editorconfig"
