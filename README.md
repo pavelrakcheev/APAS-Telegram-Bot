@@ -957,6 +957,28 @@ sequenceDiagram
 | CMake | — | Сборка |
 | WinAPI | — | GetSystemTimes, GlobalMemoryStatusEx, GetDiskFreeSpaceEx, GetTickCount64 |
 
+### Тестирование и Developer Experience
+
+| Инструмент | Версия | Назначение |
+|---|---|---|
+| pytest | 8.3.4 | Фреймворк тестирования |
+| pytest-asyncio | 0.25.0 | Async-тесты для telegram-bot |
+| pytest-cov | 6.0.0 | Покрытие кода |
+| ruff | 0.8.0 | Линтер + форматер |
+| pre-commit | 4.0.0 | Git hooks |
+| structlog | 24.4.0 | Структурированное логирование |
+| Dev Containers | — | Изолированная среда разработки |
+
+### CI/CD и безопасность
+
+| Инструмент | Назначение |
+|---|---|
+| GitHub Actions | CI: lint, tests, coverage, pip-audit, secret scan |
+| Gitleaks | Поиск секретов в коде |
+| Dependabot | Авто-обновления зависимостей |
+| Bandit | Анализ безопасности Python-кода |
+| pip-audit | Проверка уязвимостей зависимостей |
+
 <div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
@@ -1492,7 +1514,7 @@ v0.1 — в [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md). Краткая сво�
    Discord → iMessage → WhatsApp (см. [раздел One Core](#-one-core-api--мультиплатформенное-ядро-будущего)).
 5. **Данные** — миграция на SQLite/PostgreSQL или атомарные JSON-записи с
    блокировками; реализация настоящего удаления аккаунта.
-6. **Инфраструктура** — тесты, CI (lint, pip-audit, secret scan), lock-файлы.
+6. **Инфраструктура** — ✅ тесты (pytest, 39 тестов), CI (ruff, tests, coverage, pip-audit, secret scan), lock-файлы.
 7. **Функциональность** — реальная погода, рабочий генератор мини-приложений,
    командное меню (`setMyCommands`), webhook-режим.
 

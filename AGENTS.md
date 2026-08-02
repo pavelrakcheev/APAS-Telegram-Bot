@@ -241,7 +241,8 @@ retention-политики. **Не используются как контек�
 - Python 3.7+ заявлен, фактически 3.10+
 
 ### A6. Инфраструктура
-- Нет тестов, CI (кроме добавленного), мониторинга
+- ✅ Тесты: pytest, 39 тестов (Models, Commands, shared)
+- ✅ CI: ruff lint, tests, coverage, pip-audit, secret scan
 - Нет `setMyCommands`
 - Только `run_polling()`
 
@@ -289,7 +290,16 @@ Bot/
 │   ├── HttpServer.cpp/.h, SystemMonitor.cpp/.h, TrayIcon.cpp/.h
 ├── data/                   # JSON (не публикуются)
 ├── Chats/                  # Журналы (не публикуются)
-├── tests/smoke_test.py     # Структурный smoke-тест
+├── tests/               # Тесты
+│   ├── smoke_test.py     # Структурный smoke-тест
+│   ├── conftest.py       # Общие фикстуры
+│   ├── test_shared.py    # Тесты shared.py
+│   ├── test_models/      # Тесты моделей ИИ
+│   └── test_commands/    # Тесты команд
+├── .devcontainer/        # Dev Container для VS Code
+├── .pre-commit-config.yaml  # Pre-commit hooks
+├── pyproject.toml        # Конфигурация pytest, ruff, bandit
+├── requirements-dev.txt  # Зависимости для разработки
 ├── assets/covers/          # Обложки экосистемы
 ├── assets/logos/           # Иконки инструментов (SVG)
 ├── docs/                   # Документация

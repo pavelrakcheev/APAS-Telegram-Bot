@@ -22,6 +22,11 @@ GOOGLE_CLOUD_PROJECT = os.getenv('GOOGLE_CLOUD_PROJECT', 'your-project-id')
 GOOGLE_CLOUD_LOCATION = os.getenv('GOOGLE_CLOUD_LOCATION', 'us-central1')
 YANDEX_MUSIC_ADMIN_TOKEN = os.getenv('YANDEX_MUSIC_ADMIN_TOKEN')
 
+# Sentry configuration
+SENTRY_DSN = os.getenv('SENTRY_DSN')
+SENTRY_ENVIRONMENT = os.getenv('SENTRY_ENVIRONMENT', 'production')
+SENTRY_RELEASE = os.getenv('SENTRY_RELEASE', 'apas@0.1.0-canary')
+
 # Validate required keys
 REQUIRED_KEYS = ['TELEGRAM_BOT_TOKEN', 'GROQ_API_KEY']
 missing_keys = [key for key in REQUIRED_KEYS if not os.getenv(key)]
