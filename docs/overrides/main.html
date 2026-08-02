@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if page.is_homepage %}
+    <div class="apas-hero">
+      <h1>APAS</h1>
+      <p class="lead">
+        Adaptive Analytic Predictive System — experimental ecosystem
+        around a Telegram bot with multi-model AI, streaming, geoservices,
+        and cross-platform integration.
+      </p>
+      <div class="badges">
+        <span class="badge">v0.1.0-canary</span>
+        <span class="badge">Python 3.10+</span>
+        <span class="badge">MIT License</span>
+      </div>
+      <div class="cta-group">
+        <a href="SETUP/" class="cta cta-primary">
+          Get Started &rarr;
+        </a>
+        <a href="https://github.com/pavelrakcheev/APAS-Telegram-Bot" class="cta cta-secondary" target="_blank">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  {% endif %}
+
+  {{ super() }}
+{% endblock %}
+
+{% block footer %}
+  <div class="apas-footer">
+    <div class="version">
+      APAS v0.1.0-canary &middot; Built with MkDocs Material
+    </div>
+    <div class="links">
+      <a href="https://github.com/pavelrakcheev/APAS-Telegram-Bot/blob/main/LICENSE">MIT License</a>
+      <a href="https://github.com/pavelrakcheev/APAS-Telegram-Bot/blob/main/SECURITY.md">Security Policy</a>
+      <a href="https://github.com/pavelrakcheev/APAS-Telegram-Bot/blob/main/CONTRIBUTING.md">Contributing</a>
+    </div>
+  </div>
+  {{ super() }}
+{% endblock %}

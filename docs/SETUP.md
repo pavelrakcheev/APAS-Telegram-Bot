@@ -1,186 +1,196 @@
-# 🛠 Полная инструкция по установке и запуску
+# Installation & Setup
 
-> **APAS Ecosystem v0.1.0-canary** · Экспериментальная версия.
-> Перед запуском обязательно прочитайте [KNOWN-ISSUES.md](KNOWN-ISSUES.md)
-> и оба аудита безопасности ([AUDIT-01](AUDIT-01-deepseek.md),
-> [AUDIT-02](AUDIT-02-codex.md)) — версия содержит задокументированные
-> уязвимости и не предназначена для production.
-
----
-
-## 📋 Содержание
-
-1. [Что нужно знать перед началом](#-что-нужно-знать-перед-началом)
-2. [Быстрый старт: Telegram-бот](#1--telegram-бот-за-10-минут)
-3. [Mini App (ISS.ME)](#2--mini-app-issme)
-4. [APAS Connect (Python)](#3--apas-connect-python)
-5. [APAS Connect (Qt/C++)](#4--apas-connect-qtc)
-6. [Привязка Mini App к боту](#-привязка-mini-app-к-боту)
-7. [Проверка после установки](#-проверка-после-установки)
-8. [Устранение неполадок](#-устранение-неполадок)
-9. [Безопасность перед публичным запуском](#-безопасность-перед-публичным-запуском)
+!!! warning "v0.1.0-canary"
+    This is an experimental version. Before running, read
+    [KNOWN-ISSUES](KNOWN-ISSUES.md) and both security audits
+    ([AUDIT-01](AUDIT-01-deepseek.md), [AUDIT-02](AUDIT-02-codex.md)).
+    The version contains documented vulnerabilities and is **not**
+    intended for production.
 
 ---
 
-## ⚠️ Что нужно знать перед началом
+## Prerequisites
 
-| Факт | Детали |
+| Requirement | Details |
 |---|---|
-| **Версия** | `0.1.0-canary` — крайне нестабильная, только для ознакомления |
-| **Обязательные ключи** | `TELEGRAM_BOT_TOKEN` + `GROQ_API_KEY` (проверка в `src/config.py`) |
-| **Остальные ключи** | Опциональны — включают только соответствующие модели/функции |
-| **Данные** | JSON-файлы в `data/` создаются автоматически при первом запуске |
-| **Секреты** | Токены из старой истории **скомпрометированы** — получите новые (см. раздел «Безопасность») |
-| **Порты** | Бот: long-polling (свободный порт). APAS Connect: **5000** (`127.0.0.1`). Mini App: 5000 (dev) |
-| **ОС** | Бот — любая; APAS Connect Python — **Windows** (`winreg`, `tkinter`); Qt — Windows x64 |
+| **Version** | `0.1.0-canary` — extremely unstable, for learning only |
+| **Required keys** | `TELEGRAM_BOT_TOKEN` + `GROQ_API_KEY` (validated in `src/config.py`) |
+| **Optional keys** | Enable corresponding models/features only |
+| **Data** | JSON files in `data/` are created automatically on first run |
+| **Secrets** | Tokens from old history are **compromised** — get new ones (see Security) |
+| **Ports** | Bot: long-polling (free port). APAS Connect: **5000** (`127.0.0.1`). Mini App: 5000 (dev) |
+| **OS** | Bot: any; APAS Connect Python: **Windows** (`winreg`, `tkinter`); Qt: Windows x64 |
 
-### Что потребуется скачать/создать
+### API Keys Needed
 
-| Ресурс | Где взять | Зачем |
+| Resource | Where to get | Purpose |
 |---|---|---|
-| Токен Telegram-бота | [@BotFather](https://t.me/BotFather) | Обязателен |
-| `GROQ_API_KEY` | [console.groq.com](https://console.groq.com/) | Обязателен (основной ИИ) |
-| `GEMINI_API_KEY` | [aistudio.google.com](https://aistudio.google.com/) | Модели Gemini |
-| Google Cloud проект | [console.cloud.google.com](https://console.cloud.google.com/) | Imagen (`/image`) |
+| Telegram Bot Token | [@BotFather](https://t.me/BotFather) | Required |
+| `GROQ_API_KEY` | [console.groq.com](https://console.groq.com/) | Required (primary AI) |
+| `GEMINI_API_KEY` | [aistudio.google.com](https://aistudio.google.com/) | Gemini models |
+| Google Cloud project | [console.cloud.google.com](https://console.cloud.google.com/) | Imagen (`/image`) |
 | `YANDEX_API_KEY` | [console.yandex.cloud](https://console.yandex.cloud/) | YandexGPT |
-| Яндекс Музыка токен | OAuth в профиле Яндекс | Режим «Алисы» |
-| Python | [python.org](https://www.python.org/downloads/) | 3.10+ (рекомендуется 3.12/3.13) |
+| Yandex Music token | OAuth in Yandex profile | Alice AI Mode |
+| Python | [python.org](https://www.python.org/downloads/) | 3.10+ (recommended 3.12/3.13) |
 
 ---
 
-## 1. 🐍 Telegram-бот (за 10 минут)
+## 1. Telegram Bot (10 minutes)
 
-### Шаг 1 — Клонировать
+### Step 1 — Clone
 
 ```bash
 git clone https://github.com/pavelrakcheev/APAS-Telegram-Bot.git
 cd APAS-Telegram-Bot
 ```
 
-### Шаг 2 — Виртуальное окружение
+### Step 2 — Virtual Environment
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate        # macOS / Linux
-# .venv\Scripts\activate          # Windows (cmd)
-```
+=== "macOS / Linux"
 
-### Шаг 3 — Зависимости
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+
+=== "Windows (cmd)"
+
+    ```cmd
+    python3 -m venv .venv
+    .venv\Scripts\activate
+    ```
+
+=== "Windows (PowerShell)"
+
+    ```powershell
+    python3 -m venv .venv
+    .venv\Scripts\Activate.ps1
+    ```
+
+### Step 3 — Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-> ⚠️ **Известная проблема v0.1:** в `requirements.txt` битая строка
-> `google-cloud-aiplatform-` (без версии). Если `pip install` упадёт —
-> удалите эту строку и поставьте явно:
-> ```bash
-> pip install "google-cloud-aiplatform>=1.90"
-> ```
+!!! danger "Known Issue v0.1"
+    `requirements.txt` contains a broken line `google-cloud-aiplatform-`
+    (without version). If `pip install` fails, remove that line and
+    install manually:
+    ```bash
+    pip install "google-cloud-aiplatform>=1.90"
+    ```
 
-### Шаг 4 — Конфигурация
+### Step 4 — Configuration
 
 ```bash
 cp .env.example .env
 ```
 
-Заполните `.env` (минимум — две строки):
+Fill in `.env` (minimum — two lines):
 
 ```bash
-TELEGRAM_BOT_TOKEN=1234567890:AAA...   # от @BotFather
-GROQ_API_KEY=gsk_...                    # от console.groq.com
+TELEGRAM_BOT_TOKEN=1234567890:AAA...   # from @BotFather
+GROQ_API_KEY=gsk_...                    # from console.groq.com
 
-# Опционально:
-# TELEGRAM_ID=ваш_id_для_админки
-# ADMIN_PASSWORD=пароль_админа
+# Optional:
+# TELEGRAM_ID=your_id_for_admin
+# ADMIN_PASSWORD=admin_password
 # GEMINI_API_KEY=...
 # YANDEX_API_KEY=...
 # GOOGLE_CLOUD_PROJECT=...
 # YANDEX_MUSIC_ADMIN_TOKEN=...
 ```
 
-### Шаг 5 — Запуск
+### Step 5 — Run
 
 ```bash
 python main.py
 ```
 
-Бот работает в режиме long-polling — внешний адрес и порт не нужны.
-Ожидайте в консоли что-то вроде `Application started`.
+The bot runs in long-polling mode — no external address or port needed.
+Expect something like `Application started` in the console.
 
-### Альтернатива: запуск через Docker
-
-Репозиторий содержит `Dockerfile`, `Mini App/Dockerfile` и
-`docker-compose.yml` — бот и Mini App поднимаются одной командой:
+### Alternative: Docker
 
 ```bash
-cp .env.example .env        # впишите TELEGRAM_BOT_TOKEN и GROQ_API_KEY
+cp .env.example .env        # fill in TELEGRAM_BOT_TOKEN and GROQ_API_KEY
 docker compose up -d --build
 ```
 
-- `bot` — работает с монтируемыми томами `./data` и `./Chats`;
-- `mini-app` — доступен на `http://localhost:5000`, берёт данные из `./data`.
+- `bot` — runs with mounted volumes `./data` and `./Chats`;
+- `mini-app` — available at `http://localhost:5000`, reads from `./data`.
 
-Остановка: `docker compose down`.
+Stop: `docker compose down`.
 
-### Альтернатива: через Makefile
+### Alternative: Makefile
 
 ```bash
-make setup      # venv + зависимости (фильтрует битую строку requirements)
+make setup      # venv + deps (filters broken requirements line)
 make run        # python main.py
-make test       # smoke-тест
-make check      # проверка синтаксиса
-make docker-up  # то же, что docker compose up -d --build
+make test       # smoke test
+make check      # syntax check
+make docker-up  # same as docker compose up -d --build
 ```
 
-### Шаг 6 — Проверка
+### Step 6 — Verify
 
-1. В Telegram найдите бота по имени из BotFather.
-2. `/start` → пройдите регистрацию (простая или расширенная).
-3. Отправьте любое сообщение — придёт ИИ-ответ через Groq
-   (модель по умолчанию `openai/gpt-oss-120b`).
+| What | How to check | Expected result |
+|---|---|---|
+| Bot alive | `/start` → registration | Greeting, entry in `data/users_data.json` |
+| AI works | Any message | Response from Groq model |
+| Model selection | `/models` | List of 18+ models |
+| Profile | `/profile` | ISS account data |
+| Points | `/points` | Balance, history |
+| ISS Play | `/games` | Gaming profile registration |
+| Blum | `/blum` | Psychologist greeting with photo |
+| Alice | `/alice` | YandexGPT + Music mode |
+| Maps | `/maps` (geolocation) | Nearby places via Nominatim |
+| Mini App | WebApp button in profile | ISS.ME page over HTTPS |
+| APAS Connect | `curl /ping`, `/remote` in bot | `{"status": "ok"}`, system metrics |
 
 ---
 
-## 2. 📱 Mini App (ISS.ME)
+## 2. Mini App (ISS.ME)
 
-Веб-профиль пользователя: Flask + HTML/JS, открывается кнопкой в боте.
+Web user profile: Flask + HTML/JS, opened via button in the bot.
 
-### Локальный запуск
+### Local Run
 
 ```bash
 cd "Mini App"
 
-# 1. Окружение
+# 1. Environment
 python3 -m venv .venv
 source .venv/bin/activate
 
-# 2. Зависимости
+# 2. Dependencies
 pip install -r requirements.txt
 
-# 3. Данные пользователей (копия из бота!)
+# 3. User data (copy from bot!)
 cp ../data/users_data.json users_data.json
 
-# 4. Dev-сервер
+# 4. Dev server
 python app.py        # → http://localhost:5000
 ```
 
-### Деплой на Render.com (рекомендуется)
+### Deploy to Render (Recommended)
 
-1. Аккаунт на [render.com](https://render.com).
-2. **New Web Service** → укажите репозиторий с папкой `Mini App/`.
-3. Параметры:
-   - **Environment:** Python 3
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `gunicorn app:app`
-4. После деплоя получите URL вида `https://your-app.onrender.com`.
-5. Вставьте URL в кнопку WebApp бота (см. [Привязка](#-привязка-mini-app-к-боту)).
+1. Account on [render.com](https://render.com).
+2. **New Web Service** → point to the repo with `Mini App/` folder.
+3. Settings:
+    - **Environment:** Python 3
+    - **Build Command:** `pip install -r requirements.txt`
+    - **Start Command:** `gunicorn app:app`
+4. After deploy, get URL like `https://your-app.onrender.com`.
+5. Paste URL into the bot's WebApp button (see [Linking](#linking-mini-app-to-bot)).
 
-> ⚠️ Telegram открывает Web Apps **только по HTTPS**.
+!!! info "HTTPS Required"
+    Telegram opens Web Apps **only over HTTPS**.
 
-### Деплой на Heroku
+### Deploy to Heroku
 
-В папке уже есть `Procfile` и `runtime.txt` (python-3.11.6):
+The folder already contains `Procfile` and `runtime.txt` (python-3.11.6):
 
 ```bash
 cd "Mini App"
@@ -189,64 +199,65 @@ git init && git add . && git commit -m "ISS.ME"
 git push heroku main
 ```
 
-> ⚠️ **Важно:** Mini App работает со **своей копией** `users_data.json`.
-> В v0.1 она не синхронизируется с ботом автоматически — обновляйте вручную.
+!!! warning "Data Sync"
+    Mini App works with its **own copy** of `users_data.json`.
+    In v0.1 it does not sync with the bot automatically — update manually.
 
 ---
 
-## 3. 💻 APAS Connect (Python)
+## 3. APAS Connect (Python)
 
-Десктопный мост: показывает системную информацию ПК в боте по команде `/remote`.
+Desktop bridge: shows system information in the bot via `/remote`.
 
-> ⚠️ Только для **Windows** (используется `winreg`, `tkinter`).
+!!! warning "Windows Only"
+    Uses `winreg` and `tkinter` — Windows only.
 
-### Установка и запуск
+### Install & Run
 
 ```bash
 cd "APAS Connect"
 
-# 1. Окружение
+# 1. Environment
 python3 -m venv .venv
 source .venv/bin/activate
 
-# 2. Зависимости
-# ⚠️ В requirements.txt есть строка tkinter, которая ломает pip —
-#    удалите её или ставьте пакеты явно:
+# 2. Dependencies
+# ⚠️ requirements.txt has a tkinter line that breaks pip —
+#    remove it or install packages explicitly:
 pip install flask psutil requests pystray Pillow
 
-# 3. Конфигурация
+# 3. Configuration
 cp config.example.json config.json
-#    при желании впишите bot_token (код его фактически не использует)
 
-# 4. Запуск
+# 4. Run
 python main.py
 ```
 
-Программа свернётся в трей. Проверка API:
+The program minimizes to the system tray. API check:
 
 ```bash
 curl http://127.0.0.1:5000/ping
 curl http://127.0.0.1:5000/system_info
 ```
 
-### Сборка exe (Windows)
+### Build exe (Windows)
 
 ```bash
 python build_exe.py        # → dist/APAS_Connect.exe (PyInstaller, onefile)
 ```
 
-### Требование к размещению
+### Placement Requirement
 
-Бот и APAS Connect должны работать **на одной машине** (или в одной сети) —
-бот ходит на `http://localhost:5000` по команде `/remote` (`Commands/remote.py`).
+Bot and APAS Connect must run **on the same machine** (or network) —
+the bot hits `http://localhost:5000` on `/remote` (`Commands/remote.py`).
 
 ---
 
-## 4. 🖥 APAS Connect (Qt/C++)
+## 4. APAS Connect (Qt/C++)
 
-Ремейк моста на Qt 6.9.3 / C++17 / MSVC 2022 (Windows x64).
+Remake of the bridge on Qt 6.9.3 / C++17 / MSVC 2022 (Windows x64).
 
-### Сборка
+### Build
 
 ```bash
 cd "APAS Connect Qt"
@@ -255,124 +266,114 @@ cmake --build build --config Release
 # → build/Release/APASConnectQt.exe
 ```
 
-### Запуск
+### Run
 
-Запустите `APASConnectQt.exe` — окно с прогресс-барами CPU/RAM/диск,
-кнопками «Get System Info», «Check API & Models», «Start Auto Update»
-и трей-иконкой.
+Launch `APASConnectQt.exe` — window with CPU/RAM/disk progress bars,
+"Get System Info", "Check API & Models", "Start Auto Update" buttons
+and a tray icon.
 
-> ⚠️ **Известные баги v0.1** (см. [KNOWN-ISSUES.md](KNOWN-ISSUES.md) F10):
-> проверка API идёт на порт 8080 вместо 5000; запускает отсутствующие
-> `check_models.py` / `check_vertexai.py`; UI может фризиться до 40 с.
+!!! danger "Known Bugs (F10)"
+    API check hits port 8080 instead of 5000; launches missing
+    `check_models.py` / `check_vertexai.py`; UI may freeze up to 40s.
+    See [KNOWN-ISSUES: F10](KNOWN-ISSUES.md#f10-apas-connect-qt).
 
 ---
 
-## 🔗 Привязка Mini App к боту
+## Linking Mini App to Bot
 
-URL Mini App вставляется в кнопку WebApp в `Commands/profile.py`:
+The Mini App URL is set in the WebApp button in `Commands/profile.py`:
 
 ```python
 from telegram import InlineKeyboardButton, WebAppInfo
 
 keyboard = [[
     InlineKeyboardButton(
-        "👤 Мой профиль",
+        "My Profile",
         web_app=WebAppInfo(url="https://your-app.onrender.com")
     )
 ]]
 ```
 
-После изменения — перезапустите бота.
+After changes — restart the bot.
 
 ---
 
-## ✅ Проверка после установки
-
-| Что | Как проверить | Ожидаемый результат |
-|---|---|---|
-| Бот жив | `/start` → регистрация | Приветствие, запись в `data/users_data.json` |
-| ИИ работает | Обычное сообщение | Ответ модели Groq |
-| Выбор моделей | `/models` | Список 18+ моделей |
-| Профиль | `/profile` | Данные аккаунта ISS |
-| Очки | `/points` | Баланс, история |
-| ISS Play | `/games` | Регистрация игрового профиля |
-| Blum | `/blum` | Приветствие психолога с фото |
-| Alice | `/alice` | Режим YandexGPT + Музыка |
-| Карты | `/maps` (геолокация) | Места рядом через Nominatim |
-| Mini App | Кнопка WebApp в профиле | Страница ISS.ME по HTTPS |
-| APAS Connect | `curl /ping`, `/remote` в боте | `{"status": "ok"}`, системные метрики |
-
----
-
-## 🧯 Устранение неполадок
+## Troubleshooting
 
 ### `Missing required environment variables: ...`
 
-`.env` не найден или пуст. Проверьте:
-- файл называется именно `.env` и лежит в корне репозитория;
-- в нём есть `TELEGRAM_BOT_TOKEN` и `GROQ_API_KEY`;
-- бот запускается из корня (`python main.py`, не `python Commands/main.py`).
+`.env` not found or empty. Check:
 
-### Ошибка при `pip install -r requirements.txt`
+- File is named exactly `.env` and in the repository root;
+- Contains `TELEGRAM_BOT_TOKEN` and `GROQ_API_KEY`;
+- Bot is launched from root (`python main.py`, not `python Commands/main.py`).
 
-Известная проблема v0.1 — битая строка `google-cloud-aiplatform-`.
-Удалите её из файла и выполните:
+### Error on `pip install -r requirements.txt`
+
+Known issue v0.1 — broken line `google-cloud-aiplatform-`.
+Remove it from the file and run:
 
 ```bash
 pip install "google-cloud-aiplatform>=1.90"
 pip install -r requirements.txt
 ```
 
-### Бот запустился, но не отвечает
+### Bot starts but doesn't respond
 
-1. Проверьте токен в BotFather — он не должен начинаться со `your_`.
-2. Модель по умолчанию отключена провайдером? Выберите другую: `/models`.
-3. Groq-ключ активен: [console.groq.com](https://console.groq.com/) → API Keys.
+1. Check the token in BotFather — it should not start with `your_`.
+2. Default model disabled by provider? Select another: `/models`.
+3. Groq key is active: [console.groq.com](https://console.groq.com/) → API Keys.
 
-### Mini App показывает «нет данных»
+### Mini App shows "no data"
 
-`users_data.json` не скопирован в папку Mini App, либо данные устарели:
+`users_data.json` not copied to Mini App folder, or data is stale:
+
 ```bash
-cp ../data/users_data.json users_data.json   # из папки Mini App
+cp ../data/users_data.json users_data.json   # from Mini App folder
 ```
 
-### `/remote` не работает
+### `/remote` doesn't work
 
-1. APAS Connect запущен? `curl http://127.0.0.1:5000/ping`.
-2. Бот и APAS Connect на одной машине? (localhost ≠ удалённый сервер).
-3. Порт не занят другим процессом? (в v0.1 — всегда 5000).
+1. APAS Connect is running? `curl http://127.0.0.1:5000/ping`.
+2. Bot and APAS Connect on the same machine? (localhost ≠ remote server).
+3. Port not occupied by another process? (always 5000 in v0.1).
 
-### Модели Groq «не найдены» / «отключены»
+### Groq models "not found" / "disabled"
 
-Часть моделей (Kimi K2, Qwen3 32B, Llama 4, Llama 3.1/3.3, GPT OSS 20B)
-депрецирована провайдерами в 2025–2026 гг. Выберите актуальную через
-`/models` (например, `openai/gpt-oss-120b`).
+Some models (Kimi K2, Qwen3 32B, Llama 4, Llama 3.1/3.3, GPT OSS 20B)
+were deprecated by providers in 2025–2026. Select a current one via
+`/models` (e.g., `openai/gpt-oss-120b`).
 
 ---
 
-## 🔐 Безопасность перед публичным запуском
+## Security Checklist
 
-> **Обязательный чек-лист.** Версия v0.1 содержит подтверждённые уязвимости —
-> не запускайте её публично без исправлений.
+!!! danger "Mandatory"
+    v0.1 contains confirmed vulnerabilities — do not run publicly
+    without fixes.
 
-1. **Ротация секретов.** Токены, фигурировавшие в исходной истории проекта,
-   считаются скомпрометированными:
-   - [@BotFather](https://t.me/BotFather) → `/revoke` → новый токен;
-   - Groq/Gemini/Яндекс → удалить и создать новые API-ключи;
-   - сменить `ADMIN_PASSWORD`;
-   - удалить PFX-сертификаты из распространяемых материалов.
-2. **Mini App (S2 — критично):**
-   - закрыть `/api/debug` (сейчас отвечает без авторизации);
-   - добавить проверку Telegram `initData` в `app.py`;
-   - убрать `CORS(app)` / ограничить домены;
-   - не доверять `user_id` из запроса — брать из initData.
-3. **`/remote` (S4):** ограничить команду только администраторами.
-4. **`/reports`:** починить маршрутизацию `report_` / `report_detail_`
-   (сейчас IDOR скрыт ошибкой роутера).
-5. **Секреты в git:** `.env`, `data/*.json`, `Chats/*` уже в `.gitignore` —
-   перед push проверьте: `git status` не должен показывать эти файлы.
-6. **Проверка:** после исправлений запустите повторный аудит
-   (например, Codex Security / secret scan).
+1. **Rotate secrets.** Tokens from the old history are compromised:
+    - [@BotFather](https://t.me/BotFather) → `/revoke` → new token;
+    - Groq/Gemini/Yandex → delete and create new API keys;
+    - Change `ADMIN_PASSWORD`;
+    - Delete PFX certificates from distributed materials.
 
-Подробности каждой проблемы: [KNOWN-ISSUES.md](KNOWN-ISSUES.md),
-[AUDIT-01-deepseek.md](AUDIT-01-deepseek.md), [AUDIT-02-codex.md](AUDIT-02-codex.md).
+2. **Mini App (S2 — critical):**
+    - Close `/api/debug` (currently responds without auth);
+    - Add Telegram `initData` verification in `app.py`;
+    - Remove `CORS(app)` / restrict domains;
+    - Don't trust `user_id` from requests — extract from initData.
+
+3. **`/remote` (S4):** restrict command to admins only.
+
+4. **`/reports`:** fix `report_` / `report_detail_` routing
+    (IDOR hidden by router bug).
+
+5. **Secrets in git:** `.env`, `data/*.json`, `Chats/*` are in `.gitignore` —
+    before push: `git status` should not show these files.
+
+6. **Verify:** after fixes, run a re-audit
+    (e.g., Codex Security / secret scan).
+
+Details: [KNOWN-ISSUES.md](KNOWN-ISSUES.md),
+[AUDIT-01](AUDIT-01-deepseek.md), [AUDIT-02](AUDIT-02-codex.md).

@@ -1,80 +1,80 @@
-# 🛠 Разработка APAS
+# Development
 
-Руководство для разработчиков, желающих внести вклад в проект.
+Guide for developers who want to contribute to APAS.
 
 ---
 
-## Быстрый старт
+## Quick Start
 
-### Через Dev Container (рекомендуется)
+### Via Dev Container (Recommended)
 
-1. Установите [VS Code](https://code.visualstudio.com/) и [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-2. Откройте папку проекта в VS Code
-3. Нажмите "Reopen in Container" при появлении уведомления
-4. Все зависимости установятся автоматически
+1. Install [VS Code](https://code.visualstudio.com/) and [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+2. Open the project folder in VS Code
+3. Click "Reopen in Container" when the notification appears
+4. All dependencies install automatically
 
-### Ручная установка
+### Manual Setup
 
 ```bash
-# Клонируйте репозиторий
+# Clone the repository
 git clone https://github.com/pavelrakcheev/APAS-Telegram-Bot.git
 cd APAS-Telegram-Bot
 
-# Создайте виртуальное окружение
+# Create virtual environment
 python3 -m venv .venv
 source .venv/bin/activate  # Linux/macOS
 # .venv\Scripts\activate  # Windows
 
-# Установите зависимости
+# Install dependencies
 pip install -r requirements.txt
 pip install -r requirements-dev.txt
 
-# Настройте переменные окружения
+# Set up environment variables
 cp .env.example .env
-# Отредактируйте .env с вашими ключами
+# Edit .env with your keys
 
-# Установите pre-commit hooks
+# Install pre-commit hooks
 pre-commit install
 ```
 
 ---
 
-## Структура проекта
+## Project Structure
 
 ```
 Bot/
-├── main.py              # Точка входа, роутер команд
-├── shared.py            # Общие утилиты
-├── src/config.py        # Загрузка конфигурации
-├── Commands/            # Модули команд (22 модуля)
-├── Models/              # ИИ-провайдеры (groq, gemini, yandex)
-├── Modes/Alice/         # Режим Alice AI
-├── Modules/             # Геосервисы (maps, weather)
-├── Mini App/            # Flask веб-приложение
-├── APAS Connect/        # Python десктопный мост
-├── APAS Connect Qt/     # Qt/C++ ремейк
-├── tests/               # Тесты
-└── docs/                # Документация
+├── main.py              # Entry point, command router
+├── shared.py            # Shared utilities
+├── src/config.py        # Configuration loader
+├── Commands/            # Command modules (22 modules)
+├── Models/              # AI providers (groq, gemini, yandex)
+├── Modes/Alice/         # Alice AI mode
+├── Modules/             # Geoservices (maps, weather)
+├── Mini App/            # Flask web application
+├── APAS Connect/        # Python desktop bridge
+├── APAS Connect Qt/     # Qt/C++ remake
+├── tests/               # Tests
+└── docs/                # Documentation
 ```
 
 ---
 
-## Тестирование
+## Testing
 
-### Запуск всех тестов
+### Run All Tests
 
 ```bash
 pytest
 ```
 
-### С покрытием кода
+### With Coverage
 
 ```bash
 pytest --cov=Models --cov-report=html
-# Откройте htmlcov/index.html в браузере
+# Open htmlcov/index.html in browser
 ```
 
-### Только smoke-тест
+### Smoke Test Only
 
 ```bash
 python tests/smoke_test.py
@@ -82,36 +82,36 @@ python tests/smoke_test.py
 
 ---
 
-## Линтинг и форматирование
+## Linting & Formatting
 
-### Ruff (линтер + форматер)
+### Ruff (Linter + Formatter)
 
 ```bash
-# Проверка
+# Check
 ruff check .
 
-# Автоисправление
+# Auto-fix
 ruff check --fix .
 
-# Форматирование
+# Format
 ruff format .
 ```
 
 ### Pre-commit
 
 ```bash
-# Установка
+# Install
 pre-commit install
 
-# Запуск на всех файлах
+# Run on all files
 pre-commit run --all-files
 ```
 
 ---
 
-## Добавление новой ИИ-модели
+## Adding a New AI Model
 
-### 1. Создайте модуль в `Models/`
+### 1. Create Module in `Models/`
 
 ```python
 # Models/new_provider.py
@@ -120,7 +120,7 @@ from src.config import NEW_PROVIDER_API_KEY
 NEW_MODELS = {
     'new_model_key': {
         'name': 'New Model Name',
-        'description': 'Описание модели',
+        'description': 'Model description',
         'provider': 'new_provider',
         'model_id': 'model-id-123',
         'category': 'new_category'
@@ -128,24 +128,24 @@ NEW_MODELS = {
 }
 
 async def generate_new_response(model_config, system_prompt, user_message):
-    """Генерация ответа через новый провайдер."""
+    """Generate response via new provider."""
     try:
-        # Реализация API вызова
+        # API call implementation
         return "Response text"
     except Exception as e:
         raise Exception(f"Error with {model_config['name']}: {str(e)}")
 ```
 
-### 2. Зарегистрируйте в `main.py`
+### 2. Register in `Commands/models.py`
 
 ```python
 from Models.new_provider import NEW_MODELS, generate_new_response
 
-# В словарь ALL_MODELS добавьте:
-ALL_MODELS.update(NEW_MODELS)
+# Add to MODELS dict:
+MODELS.update(NEW_MODELS)
 ```
 
-### 3. Добавьте тесты
+### 3. Add Tests
 
 ```python
 # tests/test_models/test_new_provider.py
@@ -161,7 +161,7 @@ class TestNewProvider:
 
     @pytest.mark.asyncio
     async def test_generate_response(self):
-        # Тест с моком
+        # Test with mock
         pass
 ```
 
@@ -169,83 +169,79 @@ class TestNewProvider:
 
 ## CI/CD
 
-### Что проверяется в CI
+### What's Checked in CI
 
-| Проверка | Описание |
-|----------|----------|
-| Secret scan | gitleaks ищет секреты |
-| Forbidden files | Нет .env, ключей, PII |
-| Lint (ruff) | Стиль кода, ошибки |
-| Python syntax | Компиляция всех .py |
-| Tests | Unit-тесты с покрытием |
-| pip-audit | Уязвимости зависимостей |
-| Markdown links | Проверка ссылок |
+| Check | Description |
+|---|---|
+| Secret scan | gitleaks searches for secrets |
+| Forbidden files | No .env, keys, PII |
+| Lint (ruff) | Code style, errors |
+| Python syntax | Compile all .py files |
+| Tests | Unit tests with coverage |
+| pip-audit | Dependency vulnerabilities |
+| Markdown links | Link validation |
 
-### Автоматический деплой
+### Automatic Deployment
 
-При создании тега `v*` workflow `release.yml`:
-1. Собирает Windows exe (APAS Connect)
-2. Создаёт GitHub Release с ассетами
+On tag `v*`, the `release.yml` workflow:
+1. Builds Windows exe (APAS Connect)
+2. Creates GitHub Release with assets
 
 ---
 
-## Конвенции
+## Conventions
 
-### Код
+### Code
 
 - Python 3.10+
-- 4 пробела (не табы)
-- Type hints приветствуются
-- Ruff для линтинга и форматирования
+- 4 spaces (no tabs)
+- Type hints welcome
+- Ruff for linting and formatting
 
-### Коммиты
+### Commits
 
 [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
-feat: добавить новую команду /xyz
-fix: исправить баг в Reports
-docs: обновить README
-test: добавить тесты для Models
+feat: add new /xyz command
+fix: fix bug in Reports
+docs: update README
+test: add tests for Models
 ```
 
-### Ветки
+### Branches
 
-- `main` — защищённая, без force push
-- Feature ветки: `feature/описание`
-- Bug fix: `fix/описание`
+- `main` — protected, no force push
+- Feature branches: `feature/description`
+- Bug fixes: `fix/description`
 
 ---
 
-## Полезные команды
+## Useful Commands
 
 ```bash
-# Тесты
-pytest                          # Все тесты
-pytest tests/test_models/       # Только тесты моделей
-pytest -x                       # Остановка при первом падении
+# Tests
+pytest                          # All tests
+pytest tests/test_models/       # Only model tests
+pytest -x                       # Stop on first failure
 
-# Линтинг
-ruff check .                    # Проверка
-ruff format .                   # Форматирование
+# Linting
+ruff check .                    # Check
+ruff format .                   # Format
 
-# Сборка
-python -m compileall .          # Компиляция всех .py
-make docker-up                  # Docker сборка
+# Build
+python -m compileall .          # Compile all .py
+make docker-up                  # Docker build
 
-# Запуск
-python main.py                  # Запуск бота
-make run                        # Через Makefile
+# Run
+python main.py                  # Launch bot
+make run                        # Via Makefile
 ```
 
 ---
 
-## Проблемы и вопросы
+## Issues & Questions
 
-1. Проверьте [KNOWN-ISSUES.md](KNOWN-ISSUES.md)
-2. Поищите в [Issues](https://github.com/pavelrakcheev/APAS-Telegram-Bot/issues)
-3. Создайте новый Issue с标签ами `bug` или `enhancement`
-
----
-
-<div align="right"><a href="#-разработка-apas">⬆️ Наверх</a></div>
+1. Check [KNOWN-ISSUES.md](KNOWN-ISSUES.md)
+2. Search [Issues](https://github.com/pavelrakcheev/APAS-Telegram-Bot/issues)
+3. Create a new Issue with labels `bug` or `enhancement`
