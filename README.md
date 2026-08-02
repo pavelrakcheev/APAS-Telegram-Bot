@@ -10,6 +10,17 @@
   <img src="https://img.shields.io/badge/telegram--bot--api-22.5-informational" alt="python-telegram-bot 22.5">
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10+">
+  <img src="https://img.shields.io/badge/Flask-3.1.2-000000?logo=flask&logoColor=white" alt="Flask 3.1.2">
+  <img src="https://img.shields.io/badge/Qt-6.9.3-41CD52?logo=qt&logoColor=white" alt="Qt 6.9.3">
+  <img src="https://img.shields.io/badge/Telegram-Bot%20API-26A5E4?logo=telegram&logoColor=white" alt="Telegram Bot API">
+  <img src="https://img.shields.io/badge/Groq-LLM-FF4A00?logo=groq&logoColor=white" alt="Groq LLM">
+  <img src="https://img.shields.io/badge/Google-Gemini-8E75B2?logo=google&logoColor=white" alt="Google Gemini">
+  <img src="https://img.shields.io/badge/Yandex-YandexGPT-FF0000?logo=yandex&logoColor=white" alt="YandexGPT">
+  <img src="https://img.shields.io/badge/C%2B%2B-C++17-00599C?logo=cplusplus&logoColor=white" alt="C++17">
+</p>
+
 # APAS — Telegram Bot Ecosystem
 
 **APAS** (Адаптивная Аналитическая Предиктивная Система) — экспериментальная
@@ -37,9 +48,46 @@
 
 ---
 
+## ⚡ Быстрый старт
+
+Запуск Telegram-бота за 60 секунд (полная инструкция:
+[docs/SETUP.md](docs/SETUP.md)):
+
+```bash
+git clone https://github.com/pavelrakcheev/APAS-Telegram-Bot.git
+cd APAS-Telegram-Bot
+python3 -m venv .venv && source .venv/bin/activate
+cp .env.example .env            # впишите TELEGRAM_BOT_TOKEN и GROQ_API_KEY
+pip install -r requirements.txt
+python main.py
+```
+
+> Нужны только два ключа: токен бота от [@BotFather](https://t.me/BotFather)
+> и `GROQ_API_KEY` от [console.groq.com](https://console.groq.com/). Остальные —
+> опционально.
+
+---
+
+## 🤖 Попробовать бота
+
+Живой бот экосистемы: [@Intelligence_playground_bot](https://t.me/Intelligence_playground_bot)
+
+| Команда | Что покажет |
+|---|---|
+| `/start` | Регистрация аккаунта ISS |
+| `/alice` | ИИ-ассистент с интеграцией Яндекс Музыки |
+| `/blum` | «Персональный психолог» |
+| `/games` | Игровой профиль ISS Play |
+
+Веб-профиль (Mini App ISS.ME): [iss-app-for-telegram-bot.onrender.com](https://iss-app-for-telegram-bot.onrender.com)
+
+---
+
 ## 📑 Оглавление
 
 - [О проекте](#-о-проекте)
+- [Быстрый старт](#-быстрый-старт)
+- [Попробовать бота](#-попробовать-бота)
 - [Экосистема APAS](#-экосистема-apas)
   - [ISS — Intelligence Social System](#iss--intelligence-social-system)
   - [ISS Play](#iss-play)
@@ -48,8 +96,11 @@
   - [Blum](#blum)
   - [Alice AI Mode](#-alice-ai-mode)
   - [One Core API](#-one-core-api--мультиплатформенное-ядро-будущего)
+- [Карта экосистемы](#-карта-экосистемы)
+- [Зрелость компонентов](#-зрелость-компонентов)
 - [Возможности](#-возможности)
 - [Команды бота](#-команды-бота)
+- [Экосистема в цифрах](#-экосистема-в-цифрах)
 - [Архитектура](#-архитектура)
 - [Технологический стек](#-технологический-стек)
 - [Структура проекта](#-структура-проекта)
@@ -66,6 +117,7 @@
 - [Аудиты безопасности](#-аудиты-безопасности)
 - [Дорожная карта](#-дорожная-карта)
 - [Версионирование](#-версионирование)
+- [FAQ](#-faq)
 - [Лицензия и контакты](#-лицензия-и-контакты)
 
 ---
@@ -92,6 +144,101 @@
 Экосистема построена вокруг **ISS — Intelligence Social System**
 (Интеллектуальная Социальная Система): единого аккаунта пользователя,
 который используется всеми сервисами — от ИИ-чата до игр.
+
+---
+
+## 🗺 Карта экосистемы
+
+```mermaid
+flowchart TB
+    subgraph USER["👤 Пользователь"]
+        TG["Telegram-клиент"]
+        WA["Telegram Web App"]
+    end
+
+    subgraph BOT["🤖 Telegram Bot (Python)"]
+        CORE["Ядро: main.py — роутер команд и ~60 callback"]
+        ISS["ISS — профили и соцсеть"]
+        PLAY["ISS Play — игровой профиль"]
+        POINTS["ISS Points — очки"]
+        BLUM["Blum — психолог"]
+        ALICE["Alice AI Mode — ассистент"]
+        MAPS["Arc Maps / Weather"]
+        REP["Отчёты о проблемах"]
+    end
+
+    subgraph AI["🧠 ИИ-провайдеры"]
+        GROQ["Groq — GPT OSS (стриминг)"]
+        GEM["Gemini"]
+        YGPT["YandexGPT"]
+        IMG["Vertex AI — Imagen"]
+    end
+
+    subgraph EXT["🌐 Внешние сервисы"]
+        YM["Яндекс Музыка API"]
+        OSM["OpenStreetMap Nominatim"]
+    end
+
+    subgraph STORE["💾 Хранилища"]
+        JSON["data/*.json"]
+        CHATS["Chats/ — журналы диалогов"]
+    end
+
+    subgraph WEB["📱 Mini App ISS.ME (Flask)"]
+        PAGES["Профиль / очки / настройки"]
+    end
+
+    subgraph PC["💻 APAS Connect"]
+        PYP["Python (Flask, :5000)"]
+        QTC["Qt / C++"]
+    end
+
+    TG --> CORE
+    WA --> PAGES
+    CORE --> ISS
+    CORE --> PLAY
+    CORE --> POINTS
+    CORE --> BLUM
+    CORE --> ALICE
+    CORE --> MAPS
+    CORE --> REP
+    ALICE --> YGPT
+    ALICE --> YM
+    MAPS --> OSM
+    CORE --> GROQ
+    CORE --> GEM
+    CORE --> YGPT
+    CORE --> IMG
+    CORE --> JSON
+    CORE --> CHATS
+    BOT -->|HTTP localhost| PYP
+    PYP --> QTC
+    PAGES --> J2["Копия users_data.json"]
+```
+
+---
+
+## 📊 Зрелость компонентов (v0.1)
+
+| Компонент | Реализовано | Заглушки / баги | Статус |
+|---|---|---|---|
+| **Telegram Bot (ядро)** | ИИ-чат, модели, стриминг, все команды | Часть ИИ-моделей отключена провайдерами | 🟡 Работает |
+| **ISS** | Аккаунт, профили, поиск, статистика | «Написать сообщение», «Добавить в друзья» | 🟡 Работает |
+| **ISS Play** | Регистрация, генерация никнеймов, привязка ISS | Достижения, рейтинг, игра | 🟡 Работает |
+| **ISS Points** | Баланс, история, начисление админом | «Заработать больше» | 🟢 Работает |
+| **ISS.ME (Mini App)** | Профиль, очки, настройки | `/api/debug` открыт, CORS, очки «60» | 🟠 Опасно |
+| **Blum** | Приветствие, описание | Настройка, диалог | 🟡 Работает |
+| **Alice AI Mode** | Диалог (Lite/Pro), Яндекс Музыка | Потеря состояния, нет воспроизведения | 🟡 Работает |
+| **Arc Maps** | Места рядом, категории, такси | Погода — мок | 🟡 Работает |
+| **APAS Connect (Python)** | API, трей, сборка exe | `tkinter` в requirements | 🟢 Работает |
+| **APAS Connect (Qt)** | UI, мониторинг, трей | Порты, фризы (F10) | 🟠 Бета |
+| **One Core API** | — | Не реализовано, концепт | 🔴 Концепт |
+
+**Легенда:** 🟢 стабильно · 🟡 работает с оговорками · 🟠 требует внимания ·
+🔴 не реализовано. Подробности каждого статуса — в
+[KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md).
+
+---
 
 ## ISS — Intelligence Social System
 
@@ -396,7 +543,7 @@ reply/inline-клавиатуры, Markdown-форматирование, фот
 flowchart LR
     TG["Telegram<br/>(текущий адаптер)"] --> CORE["One Core API<br/>единая бизнес-логика"]
     VK["VK (ВКонтакте)"] --> CORE
-    MAX["Максим (MAX)"] --> CORE
+    MAX["MAX"] --> CORE
     DISC["Discord"] --> CORE
     IM["Apple iMessage"] --> CORE
     WA["WhatsApp"] --> CORE
@@ -538,6 +685,24 @@ imessage API, WhatsApp Business API, SQLite/PostgreSQL.
 
 ---
 
+## 📈 Экосистема в цифрах
+
+| Показатель | Значение |
+|---|---|
+| Модулей команд в боте | 22 |
+| Строк Python-кода | ~9 089 |
+| в т.ч. `Commands/` | ~5 200 |
+| ИИ-моделей | 18+ (Groq / Gemini / YandexGPT) |
+| ИИ-провайдеров | 3 + Vertex AI (Imagen) |
+| Типов callback-кнопок | ~60 |
+| Подсистем экосистемы | 11 (см. [карту](#-карта-экосистемы)) |
+| JSON-хранилищ | 5 + журналы `Chats/` |
+| Файлов в первом релизе | 96 |
+| Мусора удалено при подготовке v0.1 | 663 МБ → 36 МБ |
+| Задокументированных проблем | 26 (S1–S8, F1–F12, A1–A6) |
+
+---
+
 ## 🏗 Архитектура
 
 ```mermaid
@@ -551,6 +716,26 @@ flowchart TD
     M --> MJ["Копия users_data.json"]
     B --> R["http://localhost:5000"]
     R --> PC["APAS Connect<br/>Python или Qt"]
+```
+
+### Поток сообщения через стриминг (Groq)
+
+```mermaid
+sequenceDiagram
+    participant U as Пользователь
+    participant B as Бот (main.py)
+    participant G as Groq API
+    participant D as Хранилище
+
+    U->>B: сообщение
+    B->>D: сохранить в data/*.json и Chats/
+    B->>G: запрос (модель, системный промпт, контекст)
+    loop Стриминг (по фрагментам)
+        G-->>B: поток токенов
+        B->>U: editMessageText — обновление ответа
+    end
+    B->>D: сохранить ответ
+    B-->>U: готовый ответ
 ```
 
 ### Ключевые архитектурные особенности
@@ -1061,6 +1246,22 @@ v0.1 — в [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md). Краткая сво�
 | 1 | **Аудит №1** | **DeepSeek V4 Flash (Max)** в OpenCode Desktop | [docs/AUDIT-01-deepseek.md](docs/AUDIT-01-deepseek.md) |
 | 2 | **Аудит №2** | **ChatGPT Codex (GPT-5.6 Sol High) + Codex Security** | [docs/AUDIT-02-codex.md](docs/AUDIT-02-codex.md) |
 
+### Security-дашборд v0.1
+
+| ID | Проблема | Severity | Статус |
+|---|---|---|---|
+| S1 | Секреты скомпрометированы (токены, пароль, PFX) | 🔴 Critical | ⚠️ Открыто — нужна ротация |
+| S2 | Mini App: нет initData, открыт `/api/debug`, CORS | 🔴 Critical | ⚠️ Открыто (подтверждено live) |
+| S3 | IDOR в myreports | 🔴 Critical | ⚠️ Открыто (скрыт багом F1) |
+| S4 | `/remote` без проверки прав | 🔴 Critical | ⚠️ Открыто |
+| S5 | Условная RCE в `generator.py` (eval + path traversal) | 🟠 High | ⚠️ Открыто (недостижимо) |
+| S6 | Переписки и PII открытым текстом | 🟠 High | ⚠️ Открыто |
+| S7 | «Удаление профиля» не удаляет данные | 🟠 High | ⚠️ Открыто |
+| S8 | Перебор публичных профилей по ID | 🟠 High | ⚠️ Открыто |
+
+Полные описания и рекомендации по исправлению — в
+[KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md).
+
 ### Резюме аудитов
 
 - **Аудит №1 (DeepSeek):** общий аудит структуры, функций и мусора.
@@ -1110,6 +1311,47 @@ v0.1 — в [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md). Краткая сво�
 - `0.1.0-canary` — первая публичная версия (текущая).
 - Префикс `canary` означает экспериментальный характер релиза.
 - Изменения фиксируются в [CHANGELOG.md](CHANGELOG.md).
+
+### История релизов
+
+| Версия | Дата | Содержание | Ссылка |
+|---|---|---|---|
+| `v0.1.0-canary` | 2026-08 | Первая публичная версия: экосистема ISS/ISS Play/ISS Points/ISS.ME/Blum/Alice, два аудита безопасности, документация, очистка от мусора | [GitHub Release](https://github.com/pavelrakcheev/APAS-Telegram-Bot/releases/tag/v0.1.0-canary) |
+
+---
+
+## ❓ FAQ
+
+**Нужно ли платить за ИИ?**
+Groq имеет бесплатный тариф — его достаточно для тестирования всего бота.
+Gemini и YandexGPT — опциональные платные/по подписке провайдеры.
+
+**Сколько ключей обязательно?**
+Два: `TELEGRAM_BOT_TOKEN` и `GROQ_API_KEY`. Остальные включают только
+соответствующие модели и функции (см. [API-ключи](#-api-ключи-что-для-чего-нужно)).
+
+**Можно ли использовать это в production?**
+Нет. `v0.1.0-canary` содержит открытые уязвимости (см.
+[Security-дашборд](#security-дашборд-v01)) и публикуется только в
+ознакомительных и образовательных целях.
+
+**Где хранятся данные пользователей?**
+JSON-файлы в `data/` и журналы диалогов в `Chats/` — без базы данных.
+Эти файлы исключены из репозитория как содержащие персональные данные.
+
+**Почему бот не отвечает?**
+Проверьте: токены в `.env`, выбранную модель (`/models`) и лимиты тарифа
+провайдера. Пошагово — [SETUP.md → Устранение неполадок](docs/SETUP.md).
+
+**Это официальный голосовой помощник «Алиса» от Яндекса?**
+Нет. **Alice AI Mode** — одноимённый ИИ-режим внутри APAS на базе YandexGPT
+с собственным системным промптом; к продукту «Алиса» от Яндекса отношения
+не имеет.
+
+**Как получить токены для теста?**
+[@BotFather](https://t.me/BotFather) — токен бота; [console.groq.com](https://console.groq.com/)
+— `GROQ_API_KEY` (бесплатно). Остальные — по ссылкам из
+[раздела API-ключей](#-api-ключи-что-для-чего-нужно).
 
 ---
 
