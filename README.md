@@ -1,37 +1,60 @@
-<p align="center">
-  <img src="assets/covers/apas-logo-cover.png" alt="APAS" width="600">
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/version-0.1.0--canary-orange" alt="Version 0.1.0-canary">
-  <img src="https://img.shields.io/badge/status-extremely%20unstable-red" alt="Status: extremely unstable">
-  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License: MIT">
-  <img src="https://img.shields.io/badge/python-3.7%2B-informational" alt="Python 3.7+">
-  <img src="https://img.shields.io/badge/telegram--bot--api-22.5-informational" alt="python-telegram-bot 22.5">
-</p>
+<img src="assets/covers/apas-logo-cover.png" alt="APAS" width="600">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python 3.10+">
-  <img src="https://img.shields.io/badge/Flask-3.1.2-000000?logo=flask&logoColor=white" alt="Flask 3.1.2">
-  <img src="https://img.shields.io/badge/Qt-6.9.3-41CD52?logo=qt&logoColor=white" alt="Qt 6.9.3">
-  <img src="https://img.shields.io/badge/Telegram-Bot%20API-26A5E4?logo=telegram&logoColor=white" alt="Telegram Bot API">
-  <img src="https://img.shields.io/badge/Groq-LLM-FF4A00?logo=groq&logoColor=white" alt="Groq LLM">
-  <img src="https://img.shields.io/badge/Google-Gemini-8E75B2?logo=google&logoColor=white" alt="Google Gemini">
-  <img src="https://img.shields.io/badge/Yandex-YandexGPT-FF0000?logo=yandex&logoColor=white" alt="YandexGPT">
-  <img src="https://img.shields.io/badge/C%2B%2B-C++17-00599C?logo=cplusplus&logoColor=white" alt="C++17">
-</p>
+<h1>🛰️ APAS — Telegram Bot Ecosystem</h1>
 
-<p align="center">
-  <img src="https://img.shields.io/github/repo-size/pavelrakcheev/APAS-Telegram-Bot" alt="Repo size">
-  <img src="https://img.shields.io/github/last-commit/pavelrakcheev/APAS-Telegram-Bot" alt="Last commit">
-  <img src="https://img.shields.io/github/stars/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Stars">
-  <img src="https://img.shields.io/github/forks/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Forks">
-  <img src="https://img.shields.io/github/issues/pavelrakcheev/APAS-Telegram-Bot" alt="Open issues">
-  <img src="https://img.shields.io/github/actions/workflow/status/pavelrakcheev/APAS-Telegram-Bot/ci.yml?label=CI" alt="CI status">
-  <img src="https://img.shields.io/github/actions/workflow/status/pavelrakcheev/APAS-Telegram-Bot/pages.yml?label=Docs" alt="Docs build">
-</p>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=26A5E4&center=true&vCenter=true&width=780&lines=%D0%9C%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9+%D0%98%D0%8B+%D0%B2+Telegram;ISS+%C2%B7+ISS+Play+%C2%B7+ISS+Points+%C2%B7+ISS.ME+%C2%B7+Blum+%C2%B7+Alice;Groq+%2B+Gemini+%2B+YandexGPT+%2B+Vertex+AI;%E2%9A%A0%EF%B8%8F+0.1.0-canary+%E2%80%94+%D0%BF%D0%B5%D1%81%D0%BE%D1%87%D0%BD%D0%B8%D1%86%D0%B0%2C+%D0%BD%D0%B5+production" alt="Typing SVG" />
 
-# APAS — Telegram Bot Ecosystem
+<br>
+
+<sup><b>СТАТУС</b></sup><br>
+<img src="https://img.shields.io/badge/version-0.1.0--canary-orange?style=for-the-badge" alt="Version 0.1.0-canary">
+<img src="https://img.shields.io/badge/status-extremely%20unstable-red?style=for-the-badge" alt="Status: extremely unstable">
+<img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="License: MIT">
+
+<br><br>
+
+<sup><b>СТЕК</b></sup><br>
+<img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.10+">
+<img src="https://img.shields.io/badge/Flask-3.1.2-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask 3.1.2">
+<img src="https://img.shields.io/badge/Qt-6.9.3-41CD52?style=for-the-badge&logo=qt&logoColor=white" alt="Qt 6.9.3">
+<img src="https://img.shields.io/badge/Telegram-Bot%20API%2022.5-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Bot API">
+<img src="https://img.shields.io/badge/C%2B%2B17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++17">
+
+<br><br>
+
+<sup><b>ИИ-ПРОВАЙДЕРЫ</b></sup><br>
+<img src="https://img.shields.io/badge/Groq-LLM-FF4A00?style=for-the-badge&logo=groq&logoColor=white" alt="Groq LLM">
+<img src="https://img.shields.io/badge/Google-Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white" alt="Google Gemini">
+<img src="https://img.shields.io/badge/Yandex-YandexGPT-FF0000?style=for-the-badge&logo=yandex&logoColor=white" alt="YandexGPT">
+<img src="https://img.shields.io/badge/Vertex%20AI-Imagen-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Vertex AI Imagen">
+
+<br><br>
+
+<img src="https://img.shields.io/github/stars/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Stars">
+<img src="https://img.shields.io/github/forks/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Forks">
+<img src="https://img.shields.io/github/watchers/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Watchers">
+<br>
+<img src="https://img.shields.io/github/repo-size/pavelrakcheev/APAS-Telegram-Bot?color=informational" alt="Repo size">
+<img src="https://img.shields.io/github/last-commit/pavelrakcheev/APAS-Telegram-Bot?color=informational" alt="Last commit">
+<img src="https://img.shields.io/github/issues/pavelrakcheev/APAS-Telegram-Bot?color=informational" alt="Open issues">
+<img src="https://img.shields.io/github/actions/workflow/status/pavelrakcheev/APAS-Telegram-Bot/ci.yml?label=CI" alt="CI status">
+<img src="https://img.shields.io/github/actions/workflow/status/pavelrakcheev/APAS-Telegram-Bot/pages.yml?label=Docs" alt="Docs build">
+
+<br><br>
+
+<a href="#-быстрый-старт"><img src="https://img.shields.io/badge/⚡-Быстрый_старт-2ea44f?style=flat-square" alt="Быстрый старт"></a>
+<a href="#-попробовать-бота"><img src="https://img.shields.io/badge/🤖-Попробовать_бота-2ea44f?style=flat-square" alt="Попробовать бота"></a>
+<a href="#-экосистема-apas"><img src="https://img.shields.io/badge/🌐-Экосистема-2ea44f?style=flat-square" alt="Экосистема"></a>
+<a href="#-архитектура"><img src="https://img.shields.io/badge/🏗-Архитектура-2ea44f?style=flat-square" alt="Архитектура"></a>
+<a href="#-известные-проблемы"><img src="https://img.shields.io/badge/🐞-Известные_проблемы-2ea44f?style=flat-square" alt="Известные проблемы"></a>
+<a href="#-аудиты-безопасности"><img src="https://img.shields.io/badge/🔒-Аудиты-2ea44f?style=flat-square" alt="Аудиты безопасности"></a>
+<a href="#-faq"><img src="https://img.shields.io/badge/❓-FAQ-2ea44f?style=flat-square" alt="FAQ"></a>
+
+</div>
+
+<br>
 
 **APAS** (Адаптивная Аналитическая Предиктивная Система) — экспериментальная
 экосистема вокруг Telegram-бота с мультимодельным ИИ. Проект объединяет
@@ -42,7 +65,8 @@
 клиента-моста «APAS Connect» (Python и Qt/C++) и четыре интеграции
 с ИИ-провайдерами.
 
-> ## ⚠️ CANARY RELEASE
+> [!WARNING]
+> ### ⚠️ CANARY RELEASE
 >
 > Это **первая публичная версия с открытым исходным кодом** (`0.1.0-canary`).
 > Версия крайне нестабильная, содержит задокументированные баги, уязвимости и
@@ -72,6 +96,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
+> [!TIP]
 > Нужны только два ключа: токен бота от [@BotFather](https://t.me/BotFather)
 > и `GROQ_API_KEY` от [console.groq.com](https://console.groq.com/). Остальные —
 > опционально.
@@ -86,6 +111,8 @@ make setup && make run
 cp .env.example .env        # впишите ключи
 docker compose up -d --build
 ```
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -102,44 +129,67 @@ docker compose up -d --build
 
 Веб-профиль (Mini App ISS.ME): [iss-app-for-telegram-bot.onrender.com](https://iss-app-for-telegram-bot.onrender.com)
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 ## 📑 Оглавление
 
+<table>
+<tr>
+<td valign="top" width="25%">
+
+**🚀 Начало работы**
 - [О проекте](#-о-проекте)
 - [Быстрый старт](#-быстрый-старт)
 - [Попробовать бота](#-попробовать-бота)
-- [Экосистема APAS](#-экосистема-apas)
-  - [ISS — Intelligence Social System](#iss--intelligence-social-system)
-  - [ISS Play](#iss-play)
-  - [ISS Points](#iss-points)
-  - [ISS.ME](#issme)
-  - [Blum](#blum)
-  - [Alice AI Mode](#-alice-ai-mode)
-  - [One Core API](#-one-core-api--мультиплатформенное-ядро-будущего)
-- [Карта экосистемы](#-карта-экосистемы)
-- [Зрелость компонентов](#-зрелость-компонентов)
+- [Экосистема в цифрах](#-экосистема-в-цифрах)
 - [Возможности](#-возможности)
 - [Команды бота](#-команды-бота)
-- [Экосистема в цифрах](#-экосистема-в-цифрах)
+
+</td>
+<td valign="top" width="25%">
+
+**🌐 Экосистема APAS**
+- [Карта экосистемы](#-карта-экосистемы)
+- [Зрелость компонентов](#-зрелость-компонентов)
+- [ISS](#iss--intelligence-social-system)
+- [ISS Play](#iss-play)
+- [ISS Points](#iss-points)
+- [ISS.ME](#issme)
+- [Blum](#blum)
+- [Alice AI Mode](#-alice-ai-mode)
+- [One Core API](#-one-core-api--мультиплатформенное-ядро-будущего)
+
+</td>
+<td valign="top" width="25%">
+
+**🛠 Технические детали**
 - [Архитектура](#-архитектура)
 - [Технологический стек](#-технологический-стек)
 - [Структура проекта](#-структура-проекта)
 - [Установка и запуск](#-установка-и-запуск)
-  - [Telegram-бот](#1--telegram-бот)
-  - [Mini App (ISS.ME)](#2--mini-app-issme)
-  - [APAS Connect (Python)](#3--apas-connect-python)
-  - [APAS Connect (Qt/C++)](#4--apas-connect-qtc)
-- [API-ключи: что для чего нужно](#-api-ключи-что-для-чего-нужно)
+- [API-ключи](#-api-ключи-что-для-чего-нужно)
 - [Конфигурация](#-конфигурация)
 - [ИИ-модели](#-ии-модели)
 - [Хранение данных](#-хранение-данных)
+
+</td>
+<td valign="top" width="25%">
+
+**🔒 Статус и планы**
 - [Известные проблемы](#-известные-проблемы)
 - [Аудиты безопасности](#-аудиты-безопасности)
 - [Дорожная карта](#-дорожная-карта)
 - [Версионирование](#-версионирование)
 - [FAQ](#-faq)
 - [Лицензия и контакты](#-лицензия-и-контакты)
+
+</td>
+</tr>
+</table>
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -158,6 +208,8 @@ docker compose up -d --build
 | **APAS Connect (Qt)** | Qt 6.9.3, C++17, MSVC, CMake, WinAPI | Ремейк моста для Windows |
 | **ИИ-модули** | Groq SDK 0.33, google-generativeai 0.8.5, requests, vertexai | 18+ моделей трёх провайдеров + генерация изображений |
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 # 🌐 Экосистема APAS
@@ -165,6 +217,8 @@ docker compose up -d --build
 Экосистема построена вокруг **ISS — Intelligence Social System**
 (Интеллектуальная Социальная Система): единого аккаунта пользователя,
 который используется всеми сервисами — от ИИ-чата до игр.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -237,6 +291,8 @@ flowchart TB
     PAGES --> J2["Копия users_data.json"]
 ```
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 ## 📊 Зрелость компонентов (v0.1)
@@ -258,6 +314,8 @@ flowchart TB
 **Легенда:** 🟢 стабильно · 🟡 работает с оговорками · 🟠 требует внимания ·
 🔴 не реализовано. Подробности каждого статуса — в
 [KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md).
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -297,8 +355,12 @@ flowchart TB
 
 ### Технологии ISS
 
+<img src="https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white" alt="Python 3"> <img src="https://img.shields.io/badge/python--telegram--bot-22.5-26A5E4?logo=telegram&logoColor=white" alt="python-telegram-bot 22.5"> <img src="https://img.shields.io/badge/storage-JSON-000000?logo=json&logoColor=white" alt="JSON storage">
+
 Python 3, python-telegram-bot 22.5, JSON-хранилище (`data/users_data.json`),
 inline-клавиатуры Telegram, deep-links.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -338,8 +400,12 @@ Xbox Live / PlayStation, связанный с социальным аккаун
 
 ### Технологии ISS Play
 
+<img src="https://img.shields.io/badge/Groq-SDK-FF4A00?logo=groq&logoColor=white" alt="Groq SDK"> <img src="https://img.shields.io/badge/storage-JSON-000000?logo=json&logoColor=white" alt="JSON storage"> <img src="https://img.shields.io/badge/regex-validation-informational" alt="Regex validation">
+
 Groq SDK (генерация никнеймов), JSON-хранилище, inline-клавиатуры,
 regex-валидация.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -377,8 +443,12 @@ regex-валидация.
 
 ### Технологии ISS Points
 
+<img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/python--telegram--bot-22.5-26A5E4?logo=telegram&logoColor=white" alt="python-telegram-bot 22.5"> <img src="https://img.shields.io/badge/storage-JSON-000000?logo=json&logoColor=white" alt="JSON storage">
+
 Python, python-telegram-bot 22.5, JSON-хранилища (`users_data.json`,
 `points_transactions.json`), inline-клавиатуры, пагинация.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -412,8 +482,12 @@ Python, python-telegram-bot 22.5, JSON-хранилища (`users_data.json`,
 
 ### Технологии ISS.ME
 
+<img src="https://img.shields.io/badge/Flask-3.1.2-000000?logo=flask&logoColor=white" alt="Flask 3.1.2"> <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5"> <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript"> <img src="https://img.shields.io/badge/gunicorn-499848?logo=gunicorn&logoColor=white" alt="gunicorn"> <img src="https://img.shields.io/badge/Render-46E3B7?logo=render&logoColor=white" alt="Render">
+
 Flask 3.1.2, HTML5, CSS3, JavaScript, Telegram WebApp SDK, SVG-иконки,
 gunicorn, Render/Heroku (Procfile, runtime.txt python-3.11.6).
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -445,8 +519,12 @@ gunicorn, Render/Heroku (Procfile, runtime.txt python-3.11.6).
 
 ### Технологии Blum
 
+<img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/python--telegram--bot-22.5-26A5E4?logo=telegram&logoColor=white" alt="python-telegram-bot 22.5">
+
 Python, python-telegram-bot 22.5, inline-клавиатуры, фотографии
 (`src/blum.jpg`), time-based приветствия.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -522,6 +600,8 @@ YandexGPT и интеграцией Яндекс Музыки. Активиру�
 
 ### Технологии Alice AI Mode
 
+<img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/YandexGPT-FF0000?logo=yandex&logoColor=white" alt="YandexGPT"> <img src="https://img.shields.io/badge/yandex--music-2.1.0-FF0000?logo=yandex&logoColor=white" alt="yandex-music 2.1.0"> <img src="https://img.shields.io/badge/storage-JSON-000000?logo=json&logoColor=white" alt="JSON storage">
+
 Python, python-telegram-bot 22.5, YandexGPT (Yandex Cloud Foundation Models
 API через `requests`, `Api-Key`-авторизация), `yandex-music` 2.1.0,
 JSON-хранилища (`alice_states.json`, `yandex_music_tokens.json`),
@@ -538,6 +618,8 @@ reply/inline-клавиатуры, Markdown-форматирование, фот
   дублируют обработчики из `alice.py`; старый `Modes/Alice/yamusic.py`
   (requests-версия) не используется.
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 ## 🔌 One Core API — мультиплатформенное ядро (концепция будущего)
@@ -546,7 +628,8 @@ reply/inline-клавиатуры, Markdown-форматирование, фот
   <img src="assets/covers/onecore-api-cover.png" alt="One Core API" width="480">
 </p>
 
-> ⚠️ **Важно:** в текущей кодовой базе v0.1 **нет** реализации
+> [!IMPORTANT]
+> В текущей кодовой базе v0.1 **нет** реализации
 > мультиплатформенности. Поиск по коду (`vk`, `vkontakte`, «мессенджер»,
 > multi-platform) не находит ни одной интеграции — бот работает только
 > в Telegram. Ниже описан концепт One Core API как он видится из архитектуры
@@ -594,8 +677,12 @@ flowchart LR
 
 ### Технологии (гипотетические для One Core)
 
+<img src="https://img.shields.io/badge/Python-asyncio-3776AB?logo=python&logoColor=white" alt="Python asyncio"> <img src="https://img.shields.io/badge/Discord-discord.py-5865F2?logo=discord&logoColor=white" alt="discord.py"> <img src="https://img.shields.io/badge/WhatsApp-Business%20API-25D366?logo=whatsapp&logoColor=white" alt="WhatsApp Business API"> <img src="https://img.shields.io/badge/SQLite%20%2F%20PostgreSQL-4169E1?logo=postgresql&logoColor=white" alt="SQLite / PostgreSQL"> <img src="https://img.shields.io/badge/status-концепт-lightgrey" alt="Статус: концепт">
+
 Python, asyncio, адаптерный паттерн, python-vk-api (VK), discord.py,
 imessage API, WhatsApp Business API, SQLite/PostgreSQL.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -642,7 +729,9 @@ imessage API, WhatsApp Business API, SQLite/PostgreSQL.
   настройка категорий и расстояния, кнопка «Такси» (ссылка Яндекс.Go),
   определение города по координатам.
 - **Arc Weather** (кнопка «Погода» в картах и в Mini App): прогноз.
-  > ⚠️ В текущей версии погода — **заглушка** (моковые данные).
+
+> [!WARNING]
+> В текущей версии погода — **заглушка** (моковые данные).
 
 ### Развлечения и сервисы
 
@@ -653,8 +742,10 @@ imessage API, WhatsApp Business API, SQLite/PostgreSQL.
   интеграцией Яндекс Музыки: поиск треков, «Моя волна», чарты, плейлисты
   (см. [Alice AI Mode](#-alice-ai-mode)).
 - **Генерация изображений** (`/image`) — Imagen 3.0 через Google Vertex AI.
-  > ⚠️ В v0.1 команда **не зарегистрирована** в обработчиках бота (см.
-  > [известные проблемы](docs/KNOWN-ISSUES.md)).
+
+> [!WARNING]
+> В v0.1 команда **не зарегистрирована** в обработчиках бота (см.
+> [известные проблемы](docs/KNOWN-ISSUES.md)).
 
 ### Администрирование
 
@@ -674,6 +765,8 @@ imessage API, WhatsApp Business API, SQLite/PostgreSQL.
 - `/acc_stat` — статус учётной записи и права доступа.
 - `/start`, `/signup`, `/guest` — регистрация и гостевой вход.
 - `/settings` — переключение потоковой генерации.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -704,6 +797,8 @@ imessage API, WhatsApp Business API, SQLite/PostgreSQL.
 | `/createpost` | Админ | Создание и рассылка постов |
 | `/tools` | Админ | Системные операции |
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 ## 📈 Экосистема в цифрах
@@ -721,6 +816,8 @@ imessage API, WhatsApp Business API, SQLite/PostgreSQL.
 | Файлов в первом релизе | 96 |
 | Мусора удалено при подготовке v0.1 | 663 МБ → 36 МБ |
 | Задокументированных проблем | 26 (S1–S8, F1–F12, A1–A6) |
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -772,6 +869,8 @@ sequenceDiagram
 - **Несколько копий данных** — Mini App работает со своей (устаревшей) копией
   `users_data.json`, что является задокументированным ограничением v0.1.
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 ## 🛠 Технологический стек
@@ -785,10 +884,10 @@ sequenceDiagram
 | Groq SDK | 0.33.0 | ИИ: GPT OSS, Qwen, Llama, Kimi (со стримингом) |
 | google-generativeai | 0.8.5 | Gemini 2.0/2.5 ⚠️ deprecated, EOL 30.11.2025 |
 | google-cloud-aiplatform / vertexai | — | Imagen 3.0 ⚠️ генеративные модули удалены после 24.06.2026 |
-| requests | 2.32.5 | HTTP-клиент (YandexGPT, API) |
-| python-dotenv | 1.1.1 | Загрузка `.env` |
+| requests | 2.33.0 | HTTP-клиент (YandexGPT, API) |
+| python-dotenv | 1.2.2 | Загрузка `.env` |
 | yandex-music | 2.1.0 | Яндекс Музыка (режим «Алисы») |
-| Pillow | 10.0.1 | Изображения, иконки |
+| Pillow | 12.3.0 | Изображения, иконки |
 
 ### Mini App (ISS.ME)
 
@@ -831,6 +930,8 @@ sequenceDiagram
 | CMake | — | Сборка |
 | WinAPI | — | GetSystemTimes, GlobalMemoryStatusEx, GetDiskFreeSpaceEx, GetTickCount64 |
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 ## 📁 Структура проекта
@@ -854,7 +955,8 @@ Bot/
 ├── tests/
 │   └── smoke_test.py       # Структурный smoke-тест (без сети и ключей)
 ├── assets/
-│   └── covers/             # Обложки экосистемы (ISS, Play, Points, ISS.ME, Blum, Alice, One Core)
+│   ├── covers/             # Обложки экосистемы (ISS, Play, Points, ISS.ME, Blum, Alice, One Core)
+│   └── logos/              # SVG-логотипы провайдеров и инструментов
 ├── .github/
 │   ├── workflows/
 │   │   ├── ci.yml          # CI: gitleaks, forbidden files, syntax, pip-audit, links
@@ -939,10 +1041,13 @@ Bot/
     └── TrayIcon.cpp/.h
 ```
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 # 🚀 Установка и запуск
 
+> [!NOTE]
 > Полная пошаговая инструкция: [docs/SETUP.md](docs/SETUP.md).
 
 ## 1. 🐍 Telegram-бот
@@ -1008,9 +1113,12 @@ python main.py
 3. После регистрации отправьте любое сообщение — бот ответит через Groq
    (модель по умолчанию `openai/gpt-oss-120b`).
 
-> ⚠️ `requirements.txt` содержит битую строку `google-cloud-aiplatform-`
+> [!WARNING]
+> `requirements.txt` содержит битую строку `google-cloud-aiplatform-`
 > без версии (известная проблема v0.1) — при ошибке установки поставьте
 > её явно: `pip install "google-cloud-aiplatform>=1.90"`.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -1072,9 +1180,12 @@ git init && git add . && git commit -m "ISS.ME"
 git push heroku main
 ```
 
-> ⚠️ **Перед публичным запуском обязательно исправьте уязвимости Mini App**:
+> [!CAUTION]
+> **Перед публичным запуском обязательно исправьте уязвимости Mini App**:
 > проверка Telegram initData, закрытие `/api/debug`, ограничение CORS.
 > Подробно: [Known Issues S2](docs/KNOWN-ISSUES.md).
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -1126,6 +1237,8 @@ python build_exe.py          # → dist/APAS_Connect.exe (PyInstaller, onefile)
 (`Commands/remote.py`). APAS Connect и бот должны работать **на одной машине**
 (или в одной сети).
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 ## 4. 🖥 APAS Connect (Qt/C++)
@@ -1152,9 +1265,12 @@ cmake --build build --config Release
 CPU/RAM/диск, кнопками «Get System Info», «Check API & Models»,
 «Start Auto Update» и трей-иконкой.
 
-> ⚠️ Известные баги v0.1: проверка API на порту 8080 вместо 5000, запуск
+> [!WARNING]
+> Известные баги v0.1: проверка API на порту 8080 вместо 5000, запуск
 > отсутствующих `check_models.py`/`check_vertexai.py`, UI-фриз до 40 c.
 > См. [Known Issues F10](docs/KNOWN-ISSUES.md).
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -1173,6 +1289,8 @@ CPU/RAM/диск, кнопками «Get System Info», «Check API & Models»,
 | **APAS Connect** | — | — | Не требует ключей (работает на localhost) |
 | **Карты (Nominatim)** | — | — | Бесплатный API без ключа |
 | **Погода (Arc Weather)** | — | — | Мок-данные (реального API нет) |
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -1193,6 +1311,8 @@ CPU/RAM/диск, кнопками «Get System Info», «Check API & Models»,
 | `TELEGRAM_ID` | — | ID администратора (доступ к `/tools`, `/reports`, ...) |
 | `ADMIN_PASSWORD` | — | Секретная фраза администратора |
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 ## 🧠 ИИ-модели
@@ -1204,11 +1324,14 @@ CPU/RAM/диск, кнопками «Get System Info», «Check API & Models»,
 | <img src="assets/logos/yandex.svg" width="16" alt="Yandex"> **YandexGPT** | `Models/yandex.py` | YandexGPT 4 Lite, 5 Lite, 5 Pro, 5.1 Pro | ❌ |
 | <img src="assets/logos/googlecloud-color.svg" width="16" alt="Google Cloud"> **Google Imagen** | `Commands/image.py` | Imagen 3.0 (Vertex AI) | — |
 
-> ⚠️ По состоянию на 2026 год часть моделей отключена провайдерами:
+> [!NOTE]
+> По состоянию на 2026 год часть моделей отключена провайдерами:
 > Groq — Kimi K2, Qwen3 32B, Llama 4 Maverick/Scout, Llama 3.1/3.3
 > (депрецированы); Gemini — 2.0 Flash/Exp/Lite (отключены), 2.5-линия
 > планируется к отключению; YandexGPT 4 — отсутствует в актуальном каталоге.
 > Выбор модели — в `/models`, модель по умолчанию — `openai/gpt-oss-120b`.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -1226,9 +1349,12 @@ CPU/RAM/диск, кнопками «Get System Info», «Check API & Models»,
 
 Плюс каталог `Chats/<user_id>/chat.txt` — журналы диалогов открытым текстом.
 
-> ⚠️ Все эти файлы исключены из репозитория как содержащие персональные данные.
+> [!WARNING]
+> Все эти файлы исключены из репозитория как содержащие персональные данные.
 > Известные ограничения v0.1: нет блокировок при записи, нет миграций и схем,
 > относительные пути зависят от рабочей директории.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -1269,6 +1395,8 @@ v0.1 — в [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md). Краткая сво�
 14. **Соц. функции ISS**: «Написать сообщение» и «Добавить в друзья» —
     заглушки; достижения и рейтинг ISS Play — заглушки.
 15. **One Core API** — мультиплатформенность не реализована (только концепт).
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -1312,10 +1440,13 @@ v0.1 — в [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md). Краткая сво�
   ИИ-модели и SDK (`google-generativeai`, Vertex AI), отсутствие `/image`
   в обработчиках, гостевые callback-баги.
 
-> ⚠️ Все секреты, фигурировавшие в аудитах, считаются скомпрометированными.
+> [!CAUTION]
+> Все секреты, фигурировавшие в аудитах, считаются скомпрометированными.
 > Перед любым реальным запуском: отзовите токены (BotFather — токен бота,
 > консоли провайдеров — API-ключи), смените пароль администратора и
 > удалите PFX-сертификаты из распространяемых материалов.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -1338,6 +1469,8 @@ v0.1 — в [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md). Краткая сво�
 7. **Функциональность** — реальная погода, рабочий генератор мини-приложений,
    командное меню (`setMyCommands`), webhook-режим.
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 ## 🔖 Версионирование
@@ -1353,6 +1486,8 @@ v0.1 — в [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md). Краткая сво�
 | Версия | Дата | Содержание | Ссылка |
 |---|---|---|---|
 | `v0.1.0-canary` | 2026-08 | Первая публичная версия: экосистема ISS/ISS Play/ISS Points/ISS.ME/Blum/Alice, два аудита безопасности, документация, очистка от мусора | [GitHub Release](https://github.com/pavelrakcheev/APAS-Telegram-Bot/releases/tag/v0.1.0-canary) |
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 
 ---
 
@@ -1389,6 +1524,8 @@ JSON-файлы в `data/` и журналы диалогов в `Chats/` — б
 — `GROQ_API_KEY` (бесплатно). Остальные — по ссылкам из
 [раздела API-ключей](#-api-ключи-что-для-чего-нужно).
 
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
 ---
 
 ## 📄 Лицензия и контакты
@@ -1399,3 +1536,31 @@ JSON-файлы в `data/` и журналы диалогов в `Chats/` — б
 
 Проект публикуется «как есть» (AS IS), без каких-либо гарантий.
 Используйте на свой страх и риск — это экспериментальная песочница.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
+---
+
+## ⭐ Star History
+
+<a href="https://star-history.com/#pavelrakcheev/APAS-Telegram-Bot&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=pavelrakcheev/APAS-Telegram-Bot&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=pavelrakcheev/APAS-Telegram-Bot&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=pavelrakcheev/APAS-Telegram-Bot&type=Date" />
+  </picture>
+</a>
+
+---
+
+<div align="center">
+
+<img src="assets/covers/apas-logo-cover.png" alt="APAS" width="120">
+
+**Сделано с 🛰️ и большим количеством кофе · APAS Ecosystem `v0.1.0-canary`**
+
+<img src="https://img.shields.io/badge/если_проект_понравился-поставьте_⭐-2ea44f?style=for-the-badge" alt="Star this repo">
+
+[⚡ Быстрый старт](#-быстрый-старт) · [🤖 Попробовать бота](#-попробовать-бота) · [🐞 Известные проблемы](#-известные-проблемы) · [❓ FAQ](#-faq)
+
+</div>
