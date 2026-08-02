@@ -1,0 +1,27 @@
+name: "💡 Идея / Улучшение"
+description: Предложить новую функцию или улучшение
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Идея
+      description: Что предлагаете и зачем?
+    validations:
+      required: true
+  - type: textarea
+    id: component
+    attributes:
+      label: К каким компонентам относится
+      description: ISS, ISS Play, ISS Points, Mini App, Alice, Blum, One Core API и т.д.
+      placeholder: "например, ISS Play — реальная игра «Крестики-Нолики»"
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Дополнительно
+      description: Связанные проблемы из KNOWN-ISSUES, наброски решения
+    validations:
+      required: false

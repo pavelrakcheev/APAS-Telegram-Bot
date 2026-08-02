@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  secret-scan:
+    name: Secret scan (gitleaks)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  forbidden-files:
+    name: Forbidden files check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check for secrets files in tree
+        run: |
+          forbidden=$(find . -type f \( -name '.env' -o -name 'config.json' \
+            -o -name '*.pfx' -o -name '*.pem' -o -name '*.key' \
+            -o -name 'users_data.json' -o -name '*.p12' \) \
+            -not -path './.git/*' -not -name '.env.example')
+          if [ -n "$forbidden" ]; then
+            echo "Forbidden files found:"; echo "$forbidden"; exit 1
+          fi
+          echo "No forbidden files found."
+
+  python:
+    name: Python syntax
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile all sources
+        run: python -m compileall -q .
+
+  deps:
+    name: Dependency audit (pip-audit, informational)
+    runs-on: ubuntu-latest
+    # Информационный: канарей-зависимости v0.1 намеренно устаревшие (A5),
+    # обновления идут через Dependabot. Не блокирует мердж, но логирует CVE.
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Normalize requirements
+        run: |
+          # Известная проблема v0.1: битая последняя строка requirements.txt
+          grep -v '^google-cloud-aiplatform' requirements.txt > /tmp/requirements.txt || true
+      - name: Install dependencies
+        run: pip install -r /tmp/requirements.txt
+      - name: Install pip-audit
+        run: python -m pip install pip-audit
+      - name: Audit installed packages
+        run: pip-audit
+
+  markdown-links:
+    name: Markdown links (informational)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check links
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --no-progress --exclude 't\.me|onrender\.com|localhost|#|img\.shields\.io' README.md docs/ SECURITY.md CHANGELOG.md

@@ -1,0 +1,23 @@
+.git
+.venv
+**/__pycache__
+**/*.pyc
+*.pyo
+.env
+data
+Chats
+dist
+build
+docs
+assets
+.github
+Mini App
+APAS Connect
+APAS Connect Qt
+tests
+.gitignore
+README.md
+LICENSE
+CHANGELOG.md
+SECURITY.md
+CONTRIBUTING.md

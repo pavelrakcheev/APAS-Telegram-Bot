@@ -108,6 +108,31 @@ python main.py
 Бот работает в режиме long-polling — внешний адрес и порт не нужны.
 Ожидайте в консоли что-то вроде `Application started`.
 
+### Альтернатива: запуск через Docker
+
+Репозиторий содержит `Dockerfile`, `Mini App/Dockerfile` и
+`docker-compose.yml` — бот и Mini App поднимаются одной командой:
+
+```bash
+cp .env.example .env        # впишите TELEGRAM_BOT_TOKEN и GROQ_API_KEY
+docker compose up -d --build
+```
+
+- `bot` — работает с монтируемыми томами `./data` и `./Chats`;
+- `mini-app` — доступен на `http://localhost:5000`, берёт данные из `./data`.
+
+Остановка: `docker compose down`.
+
+### Альтернатива: через Makefile
+
+```bash
+make setup      # venv + зависимости (фильтрует битую строку requirements)
+make run        # python main.py
+make test       # smoke-тест
+make check      # проверка синтаксиса
+make docker-up  # то же, что docker compose up -d --build
+```
+
 ### Шаг 6 — Проверка
 
 1. В Telegram найдите бота по имени из BotFather.

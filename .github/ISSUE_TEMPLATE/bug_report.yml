@@ -1,0 +1,43 @@
+name: "🐞 Баг"
+description: Сообщить об ошибке или неработающей функции
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Компонент
+      description: Где проявляется (бот, Mini App, APAS Connect, документация и т.д.)
+      placeholder: "например, ISS Points"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание
+      description: Что произошло и что ожидалось?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Шаги воспроизведения
+      placeholder: |
+        1. Выполнить /points
+        2. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Версия / коммит
+      description: Если известно
+    validations:
+      required: false
+  - type: checkboxes
+    id: security
+    attributes:
+      label: Секретность
+      options:
+        - label: "Не содержит токенов, паролей и персональных данных"
+          required: true

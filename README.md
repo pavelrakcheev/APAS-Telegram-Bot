@@ -21,6 +21,16 @@
   <img src="https://img.shields.io/badge/C%2B%2B-C++17-00599C?logo=cplusplus&logoColor=white" alt="C++17">
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/github/repo-size/pavelrakcheev/APAS-Telegram-Bot" alt="Repo size">
+  <img src="https://img.shields.io/github/last-commit/pavelrakcheev/APAS-Telegram-Bot" alt="Last commit">
+  <img src="https://img.shields.io/github/stars/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Stars">
+  <img src="https://img.shields.io/github/forks/pavelrakcheev/APAS-Telegram-Bot?style=social" alt="Forks">
+  <img src="https://img.shields.io/github/issues/pavelrakcheev/APAS-Telegram-Bot" alt="Open issues">
+  <img src="https://img.shields.io/github/actions/workflow/status/pavelrakcheev/APAS-Telegram-Bot/ci.yml?label=CI" alt="CI status">
+  <img src="https://img.shields.io/github/actions/workflow/status/pavelrakcheev/APAS-Telegram-Bot/pages.yml?label=Docs" alt="Docs build">
+</p>
+
 # APAS — Telegram Bot Ecosystem
 
 **APAS** (Адаптивная Аналитическая Предиктивная Система) — экспериментальная
@@ -65,6 +75,17 @@ python main.py
 > Нужны только два ключа: токен бота от [@BotFather](https://t.me/BotFather)
 > и `GROQ_API_KEY` от [console.groq.com](https://console.groq.com/). Остальные —
 > опционально.
+
+**Альтернативные способы запуска:**
+
+```bash
+# Через Makefile (создаёт venv, фильтрует битую строку requirements)
+make setup && make run
+
+# Через Docker (бот + Mini App одной командой)
+cp .env.example .env        # впишите ключи
+docker compose up -d --build
+```
 
 ---
 
@@ -821,11 +842,26 @@ Bot/
 ├── requirements.txt        # Зависимости бота
 ├── .env.example            # Шаблон конфигурации (скопировать в .env)
 ├── .gitignore
+├── .dockerignore
+├── Dockerfile              # Сборка бота (python:3.12-slim)
+├── docker-compose.yml      # bot + mini-app одной командой
+├── Makefile                # setup / run / test / check / docker-up
 ├── LICENSE                 # MIT
 ├── CHANGELOG.md            # История версий
 ├── README.md
+├── SECURITY.md             # Политика безопасности
+├── CONTRIBUTING.md         # Как контрибьютить
+├── tests/
+│   └── smoke_test.py       # Структурный smoke-тест (без сети и ключей)
 ├── assets/
-│   └── covers/             # Обложки экосистемы (ISS, ISS Play, Points, ISS.ME, Blum, One Core)
+│   └── covers/             # Обложки экосистемы (ISS, Play, Points, ISS.ME, Blum, Alice, One Core)
+├── .github/
+│   ├── workflows/
+│   │   ├── ci.yml          # CI: gitleaks, forbidden files, syntax, pip-audit, links
+│   │   └── pages.yml       # GitHub Pages для docs/
+│   ├── dependabot.yml      # Авто-обновления зависимостей
+│   ├── ISSUE_TEMPLATE/     # Шаблоны Issues (баг, идея)
+│   └── PULL_REQUEST_TEMPLATE.md
 ├── docs/                   # Документация и аудиты
 │   ├── ARCHITECTURE.md
 │   ├── SETUP.md            # Пошаговая инструкция по установке
