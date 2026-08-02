@@ -114,9 +114,11 @@ retention-политики. **Не используются как контек�
   - **Нет воспроизведения** — только информация о треках
   - **Нет персональной «Моей волны»** без OAuth-токена
 
-### One Core API — Концепция
-- Только дизайн, **нет кода** — мультиплатформенное ядро для
-  Telegram/VK/MAX/Discord/iMessage/WhatsApp
+### One Core API — Alpha
+- Мультиплатформенное ядро: Telegram + VK (alpha)
+- VK-интеграция: `python-vk-api`, основные команды работают
+- Скриншоты: `docs/media/images/APAS on VK (alpha test).jpg`
+- **Проблема:** нет выделенного транспортного слоя, код адаптера не抽象изирован
 
 ### APAS Connect (Python)
 - `APAS Connect/main.py` — Flask API + трей + tkinter

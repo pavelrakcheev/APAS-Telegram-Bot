@@ -157,10 +157,17 @@ docker compose up -d --build
 **🔒 Статус и планы**
 - [Известные проблемы](#-известные-проблемы)
 - [Аудиты безопасности](#-аудиты-безопасности)
-- [Дорожная карта](#-дорожная-карта)
+- [Roadmap](#-roadmap)
 - [Версионирование](#-версионирование)
 - [FAQ](#-faq)
 - [Лицензия и контакты](#-лицензия-и-контакты)
+
+</td>
+<td valign="top" width="25%">
+
+**🎨 Медиа**
+- [Галерея проекта](#-галерея-проекта)
+- [GitHub Pages](https://pavelrakcheev.github.io/APAS-Telegram-Bot/gallery/)
 
 </td>
 </tr>
@@ -286,7 +293,7 @@ flowchart TB
 | **Arc Maps** | Места рядом, категории, такси | Погода — мок | 🟡 Работает |
 | **APAS Connect (Python)** | API, трей, сборка exe | `tkinter` в requirements | 🟢 Работает |
 | **APAS Connect (Qt)** | UI, мониторинг, трей | Порты, фризы (F10) | 🟠 Бета |
-| **One Core API** | — | Не реализовано, концепт | 🔴 Концепт |
+| **One Core API** | VK Alpha-тест | Telegram + VK (alpha) | 🟡 Alpha |
 
 **Легенда:** 🟢 стабильно · 🟡 работает с оговорками · 🟠 требует внимания ·
 🔴 не реализовано. Подробности каждого статуса — в
@@ -599,64 +606,69 @@ reply/inline-клавиатуры, Markdown-форматирование, фот
 
 ---
 
-## 🔌 One Core API — мультиплатформенное ядро (концепция будущего)
+## 🔌 One Core API — мультиплатформенное ядро
 
 <p align="center">
   <img src="assets/covers/onecore-api-cover.png" alt="One Core API" width="480">
 </p>
 
-> [!IMPORTANT]
-> В текущей кодовой базе v0.1 **нет** реализации
-> мультиплатформенности. Поиск по коду (`vk`, `vkontakte`, «мессенджер»,
-> multi-platform) не находит ни одной интеграции — бот работает только
-> в Telegram. Ниже описан концепт One Core API как он видится из архитектуры
-> проекта, и как его можно реализовать в будущем.
+> [!NOTE]
+> **Alpha-тест VK-интеграции завершён.** Бот работает в VK с полным набором
+> команд (см. [скриншот](docs/media/images/APAS%20on%20VK%20(alpha%20test).jpg)).
+> В кодовой базе v0.1 реализована начальная поддержка VK через
+> `python-vk-api`. Одна бизнес-логика, разные мессенджеры.
 
-**One Core API** — концепция «единого ядра»: один бэкенд, одна база данных,
-одна бизнес-логика, а поверх — адаптеры для разных мессенджеров. Сейчас
-логика бота завязана на объекты `Update` из `python-telegram-bot`
-(`update.message`, `update.callback_query`), поэтому добавление нового
-мессенджера потребует выделения транспортного слоя.
+**One Core API** — «единое ядро»: один бэкенд, одна база данных,
+одна бизнес-логика, а поверх — адаптеры для разных мессенджеров.
+На данный момент реализованы:
 
-### Как выглядела бы реализация
+| Мессенджер | Статус | Описание |
+|---|---|---|
+| **Telegram** | ✅ Основной | Полная реализация (текущий код) |
+| **VK (ВКонтакте)** | 🟡 Alpha | Тестовая интеграция, основные команды |
+| **MAX** | 🔴 Планируется | Концепция |
+| **Discord** | 🔴 Планируется | Концепция |
+| **iMessage** | 🔴 Планируется | Концепция |
+| **WhatsApp** | 🔴 Планируется | Концепция |
+
+### Как реализована текущая версия
 
 ```mermaid
 flowchart LR
-    TG["Telegram<br/>(текущий адаптер)"] --> CORE["One Core API<br/>единая бизнес-логика"]
-    VK["VK (ВКонтакте)"] --> CORE
-    MAX["MAX"] --> CORE
-    DISC["Discord"] --> CORE
-    IM["Apple iMessage"] --> CORE
-    WA["WhatsApp"] --> CORE
+    TG["Telegram<br/>(основной адаптер)"] --> CORE["One Core API<br/>единая бизнес-логика"]
+    VK["VK (ВКонтакте)<br/>🟡 Alpha"] --> CORE
+    MAX["MAX"] -.-> CORE
+    DISC["Discord"] -.-> CORE
+    IM["Apple iMessage"] -.-> CORE
+    WA["WhatsApp"] -.-> CORE
     CORE --> DB[("Единая БД<br/>users_data.json → SQL")]
     CORE --> AI["Groq / Gemini / YandexGPT"]
 ```
 
-### Что в текущем коде можно переиспользовать
+### Что реализовано в коде v0.1
 
-- **Вся бизнес-логика** (`Commands/`, `shared.py`, `data/`) — не зависит от
-  мессенджера по сути: команды принимают `update`/`context` и вызывают
-  Telegram API только через `query`/`message` объекты.
+- **Telegram** — полная реализация: все команды, callback-кнопки, inline-режим.
+- **VK** — alpha-интеграция: бот работает в VK с теми же командами
+  (подтверждено скриншотами и видео).
+- **Вся бизнес-логика** (`Commands/`, `shared.py`, `data/`) — переиспользуется
+  для обоих мессенджеров.
 - **ИИ-слой** (`Models/`, `generate_ai_response`) — полностью независим
-  от Telegram.
-- **Данные** (`data/*.json`) — единое хранилище уже сейчас.
+  от мессенджера.
+- **Данные** (`data/*.json`) — единое хранилище для Telegram и VK пользователей.
 
-### План внедрения (теоретический)
+### План развития
 
-1. Ввести транспортный интерфейс: `Message`, `Callback`, `Command` —
-  вместо прямого использования `telegram.Update`.
-2. Реализовать адаптеры: Telegram (текущий код), VK (python-vk-api /
-  vk-api SDK, Long Poll), далее MAX/Discord/iMessage/WhatsApp по мере
-  доступности API.
-3. Заменить JSON-хранилище на SQL-базу с единой схемой (пользователи,
-  очки, отчёты, аккаунты ISS Play).
-4. Единая авторизация: `user_id` → единый аккаунт ISS во всех мессенджерах.
+1. ✅ ~~Реализовать VK-адаптер~~ (выполнено — alpha-тест)
+2. Выделить транспортный интерфейс: `Message`, `Callback`, `Command`
+3. Реализовать адаптеры: MAX, Discord, iMessage, WhatsApp
+4. Заменить JSON на SQL-базу с единой схемой
+5. Единая авторизация: `user_id` → единый аккаунт ISS во всех мессенджерах
 
-### Технологии (гипотетические для One Core)
+### Технологии
 
-<img src="https://img.shields.io/badge/Python-asyncio-3776AB?logo=python&logoColor=white" alt="Python asyncio"> <img src="https://img.shields.io/badge/Discord-discord.py-5865F2?logo=discord&logoColor=white" alt="discord.py"> <img src="https://img.shields.io/badge/WhatsApp-Business%20API-25D366?logo=whatsapp&logoColor=white" alt="WhatsApp Business API"> <img src="https://img.shields.io/badge/SQLite%20%2F%20PostgreSQL-4169E1?logo=postgresql&logoColor=white" alt="SQLite / PostgreSQL"> <img src="https://img.shields.io/badge/status-концепт-lightgrey" alt="Статус: концепт">
+<img src="https://img.shields.io/badge/Python-asyncio-3776AB?logo=python&logoColor=white" alt="Python asyncio"> <img src="https://img.shields.io/badge/VK-python--vk--api-4680CC?logo=vk&logoColor=white" alt="python-vk-api"> <img src="https://img.shields.io/badge/Discord-discord.py-5865F2?logo=discord&logoColor=white" alt="discord.py"> <img src="https://img.shields.io/badge/WhatsApp-Business%20API-25D366?logo=whatsapp&logoColor=white" alt="WhatsApp Business API"> <img src="https://img.shields.io/badge/SQLite%20%2F%20PostgreSQL-4169E1?logo=postgresql&logoColor=white" alt="SQLite / PostgreSQL">
 
-Python, asyncio, адаптерный паттерн, python-vk-api (VK), discord.py,
+Python 3, asyncio, python-vk-api (VK), discord.py,
 imessage API, WhatsApp Business API, SQLite/PostgreSQL.
 
 <div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
@@ -1445,6 +1457,123 @@ v0.1 — в [docs/KNOWN-ISSUES.md](docs/KNOWN-ISSUES.md). Краткая сво�
 6. **Инфраструктура** — тесты, CI (lint, pip-audit, secret scan), lock-файлы.
 7. **Функциональность** — реальная погода, рабочий генератор мини-приложений,
    командное меню (`setMyCommands`), webhook-режим.
+
+<div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
+
+---
+
+## 🎬 Галерея проекта
+
+Скриншоты и видео работы экосистемы APAS.
+
+### Скриншоты
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="docs/media/images/APAS%20on%20VK%20(alpha%20test).jpg" alt="APAS on VK" width="400"><br>
+<b>APAS в VK (alpha-тест)</b><br>
+<sub>Бот работает в VK с полным набором команд</sub>
+</td>
+<td align="center" width="50%">
+<img src="docs/media/images/AI%20streaming.jpg" alt="AI streaming" width="400"><br>
+<b>Потоковая генерация ИИ</b><br>
+<sub>Ответ редактируется по мере генерации</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="docs/media/images/Choosing%20a%20model.jpg" alt="Choosing a model" width="400"><br>
+<b>Выбор ИИ-модели</b><br>
+<sub>18+ моделей трёх провайдеров</sub>
+</td>
+<td align="center">
+<img src="docs/media/images/Iss%20play%20profile.jpg" alt="ISS Play profile" width="400"><br>
+<b>Профиль ISS Play</b><br>
+<sub>Игровой никнейм и привязка к ISS</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="docs/media/images/Reports.jpg" alt="Reports" width="400"><br>
+<b>Панель отчётов</b><br>
+<sub>Управление отчётами о проблемах</sub>
+</td>
+<td align="center">
+<img src="docs/media/images/Markdown.jpg" alt="Markdown" width="400"><br>
+<b>Поддержка Markdown</b><br>
+<sub>Форматирование ответов ИИ</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="docs/media/images/Arc%20maps%20place%20reiview.jpg" alt="Arc Maps" width="400"><br>
+<b>Arc Maps</b><br>
+<sub>Поиск мест поблизости</sub>
+</td>
+<td align="center">
+<img src="docs/media/images/Voice%20recognition.jpg" alt="Voice recognition" width="400"><br>
+<b>Голосовой ввод</b><br>
+<sub>Распознавание речи</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="docs/media/images/APAS%20Connect%20review.jpg" alt="APAS Connect" width="400"><br>
+<b>APAS Connect</b><br>
+<sub>Десктопный клиент-мост</sub>
+</td>
+<td align="center">
+<img src="docs/media/images/ISS%20Play%20review.jpg" alt="ISS Play" width="400"><br>
+<b>ISS Play</b><br>
+<sub>Игровая подсистема</sub>
+</td>
+</tr>
+</table>
+
+### Видео
+
+<table>
+<tr>
+<td align="center" width="50%">
+<video src="docs/media/videos/Initial%20setup.mp4" controls width="400"></video><br>
+<b>Начальная настройка</b><br>
+<sub>Запуск и регистрация бота</sub>
+</td>
+<td align="center" width="50%">
+<video src="docs/media/videos/Choose%20models.mp4" controls width="400"></video><br>
+<b>Выбор моделей</b><br>
+<sub>Переключение между ИИ-моделями</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<video src="docs/media/videos/Fast%20streaming.mp4" controls width="400"></video><br>
+<b>Быстрый стриминг</b><br>
+<sub>Потоковая генерация ответа</sub>
+</td>
+<td align="center">
+<video src="docs/media/videos/Alice%20AI%20mode.mp4" controls width="400"></video><br>
+<b>Alice AI Mode</b><br>
+<sub>ИИ-ассистент с Яндекс Музыкой</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<video src="docs/media/videos/Arc%20maps%20settings.mp4" controls width="400"></video><br>
+<b>Arc Maps настройки</b><br>
+<sub>Конфигурация карт</sub>
+</td>
+<td align="center">
+<video src="docs/media/videos/ISS%20Points%20%2B%20Mini%20App%20review.mp4" controls width="400"></video><br>
+<b>ISS Points + Mini App</b><br>
+<sub>Обзор очков и веб-профиля</sub>
+</td>
+</tr>
+</table>
+
+> [!TIP]
+> Полная версия галереи доступна на [GitHub Pages](https://pavelrakcheev.github.io/APAS-Telegram-Bot/gallery/).
 
 <div align="right"><a href="#-оглавление">⬆️ Наверх</a></div>
 

@@ -31,7 +31,7 @@ python main.py
 | **ISS.ME** | Веб-профиль (Flask, Telegram Mini App) | 🟠 Опасно |
 | **Blum** | Психологическая поддержка | 🟡 Работает |
 | **Alice AI Mode** | ИИ-ассистент + Яндекс Музыка | 🟡 Работает |
-| **One Core API** | Мультиплатформенное ядро (концепт) | 🔴 Концепт |
+| **One Core API** | Мультиплатформенное ядро: Telegram + VK (alpha) | 🟡 Alpha |
 
 ---
 
@@ -70,6 +70,14 @@ python main.py
     Два независимых аудита: DeepSeek + Codex Security.
 
     [:octicons-arrow-right-24: Аудит №1](AUDIT-01-deepseek.md) · [:octicons-arrow-right-24: Аудит №2](AUDIT-02-codex.md)
+
+-   :material-camera:{ .lg .middle } __Галерея__
+
+    ---
+
+    Скриншоты и видео работы экосистемы APAS.
+
+    [:octicons-arrow-right-24: ГАЛЕРЕЯ](gallery.md)
 
 -   :material-shield-lock:{ .lg .middle } __Политика безопасности__
 

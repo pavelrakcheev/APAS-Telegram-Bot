@@ -47,6 +47,7 @@ nav:
   - Главная: index.md
   - Установка: SETUP.md
   - Архитектура: ARCHITECTURE.md
+  - Галерея: gallery.md
   - Известные проблемы: KNOWN-ISSUES.md
   - Аудит №1 (DeepSeek): AUDIT-01-deepseek.md
   - Аудит №2 (Codex Security): AUDIT-02-codex.md
