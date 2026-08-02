@@ -520,6 +520,14 @@ Python, python-telegram-bot 22.5, inline-клавиатуры, фотограф�
   <img src="assets/covers/alice-cover.png" alt="Alice AI Mode" width="480">
 </p>
 
+<p align="center">
+  <img src="assets/logos/Yandex-Cloud-powered-by-ru-light.svg" alt="Yandex Cloud" width="200">
+</p>
+
+> [!NOTE]
+> **Функционал Alice AI Mode работает на базе Яндекс Облако** —
+> YandexGPT (Yandex Cloud Foundation Models API).
+
 **Alice AI Mode** — режим ИИ-ассистента в духе виртуального помощника Яндекса:
 отдельная «вселенная» внутри бота со своим системным промптом, двумя моделями
 YandexGPT и интеграцией Яндекс Музыки. Активируется командой `/alice`,
