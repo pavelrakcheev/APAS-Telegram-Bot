@@ -1,0 +1,46 @@
+services:
+  - type: web
+    name: apas-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        from:
+          - type: encrypted
+            value: ${TELEGRAM_BOT_TOKEN}
+      - key: GROQ_API_KEY
+        from:
+          - type: encrypted
+            value: ${GROQ_API_KEY}
+      - key: GEMINI_API_KEY
+        from:
+          - type: encrypted
+            value: ${GEMINI_API_KEY}
+      - key: YANDEX_API_KEY
+        from:
+          - type: encrypted
+            value: ${YANDEX_API_KEY}
+      - key: TELEGRAM_ID
+        from:
+          - type: encrypted
+            value: ${TELEGRAM_ID}
+      - key: ADMIN_PASSWORD
+        from:
+          - type: encrypted
+            value: ${ADMIN_PASSWORD}
+    directories:
+      - /app
+    __build:
+      dockerfilePath: Dockerfile
+
+  - type: web
+    name: apas-mini-app
+    env: python
+    plan: free
+    buildCommand: pip install -r Mini\ App/requirements.txt
+    startCommand: python Mini\ App/app.py
+    envVars:
+      - key: PORT
+        value: "10000"
