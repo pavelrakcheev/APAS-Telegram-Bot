@@ -38,6 +38,9 @@ from Commands.guest import guest_command, handle_guest_callback, is_guest_mode, 
 from Commands.games import games_command, handle_games_callback, handle_iss_play_nickname_input
 from Commands.blum import blum_command, handle_blum_callback
 from Commands.models import models_command, handle_models_callback, get_user_model, generate_ai_response
+from Commands.vip import vip_command, handle_vip_callback, vip_status_command, get_vip_handlers, successful_payment_handler
+from telegram.ext import PreCheckoutQueryHandler, MessageHandler
+from telegram.ext import filters as telegram_filters
 
 # Import Alice mode
 from Modes.Alice.alice import alice_command, handle_alice_callback, handle_alice_message, is_alice_mode_active
@@ -234,6 +237,13 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Check if this is a mini app callback
     if data.startswith('mini_app_') or data.startswith('enhance_') or data.startswith('icon_'):
         # Mini app callbacks are handled by individual apps through handle_mini_app_mode
+        return
+
+    # Check if this is a vip callback
+    vip_callbacks = ['vip_close', 'vip_buy_', 'vip_pay_', 'vip_main']
+    if any(data.startswith(prefix) for prefix in vip_callbacks):
+        from Commands.vip import handle_vip_callback
+        await handle_vip_callback(update, context)
         return
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -477,8 +487,14 @@ def main():
     application.add_handler(CommandHandler("blum", blum_command))
     application.add_handler(CommandHandler("models", models_command))
     application.add_handler(CommandHandler("remote", remote_command))
+    for handler in get_vip_handlers():
+        application.add_handler(handler)
+
     application.add_handler(CommandHandler("alice", alice_command))
+    application.add_handler(CommandHandler("vip", vip_command))
+    application.add_handler(CommandHandler("vipstatus", vip_status_command))
     application.add_handler(CallbackQueryHandler(button_callback))
+    application.add_handler(MessageHandler(telegram_filters.SuccessfulPayment, successful_payment_handler))
 
     # Message handler - only for non-commands and when not in setup
     async def message_filter(update: Update, context: ContextTypes.DEFAULT_TYPE):
