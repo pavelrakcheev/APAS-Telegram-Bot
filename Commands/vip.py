@@ -1,5 +1,5 @@
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, LabeledPrice
-from telegram.ext import ContextTypes, PreCheckoutQueryHandler, SuccessfulPaymentHandler
+from telegram.ext import ContextTypes, PreCheckoutQueryHandler
 from shared import load_user_data, save_user_data
 import time
 
@@ -226,5 +226,4 @@ async def successful_payment_handler(update: Update, context: ContextTypes.DEFAU
 def get_vip_handlers():
     return [
         PreCheckoutQueryHandler(pre_checkout_query_handler),
-        SuccessfulPaymentHandler(successful_payment_handler),
     ]
